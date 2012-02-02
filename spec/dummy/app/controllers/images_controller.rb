@@ -1,9 +1,8 @@
 class ImagesController < ApplicationController
   respond_to :html, :json
-  before_filter :find_page
 
   def index
-    @images = @page.images
+    @images = Image.scoped
 
     respond_with @images do |format|
       format.json { render :json => json_images(@images), :layout => false }
@@ -11,10 +10,10 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = @page.images.build(params[:image])
+    @image = Image.new(params[:image])
 
     if @image.save
-      render :text => view_context.image_tag(resize_image(@image, 300, 250).url)
+      render :text => view_context.image_tag(resize_image(@image, 300, 250).url, :alt => '')
     else
       render :json => @image.errors
     end
@@ -37,9 +36,5 @@ private
 
   def resize_image(image, width = 100, height = 100, gravity = :c)
     image.image.process(:resize_and_crop, :width => width, :height => height, :gravity => gravity.to_s)
-  end
-
-  def find_page
-    @page = Page.find(params[:page_id])
   end
 end

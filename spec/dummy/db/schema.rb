@@ -14,15 +14,12 @@
 ActiveRecord::Schema.define(:version => 20120202074740) do
 
   create_table "images", :force => true do |t|
-    t.string   "imageable_type", :null => false
-    t.integer  "imageable_id",   :null => false
-    t.string   "image_uid",      :null => false
+    t.string   "image_uid",  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "images", ["image_uid"], :name => "index_images_on_image_uid"
-  add_index "images", ["imageable_type", "imageable_id"], :name => "index_images_on_imageable_type_and_imageable_id"
 
   create_table "pages", :force => true do |t|
     t.string   "title",      :null => false

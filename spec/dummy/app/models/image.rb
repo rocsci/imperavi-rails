@@ -2,7 +2,6 @@ class Image < ActiveRecord::Base
   ALLOWED_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
   ALLOWED_EXTENSIONS = [:jpeg, :jpg, :png, :JPEG, :JPG, :PNG]
 
-  belongs_to :imageable, :polymorphic => true
   image_accessor :image # accessor to image_uid
 
   validates :image, :presence => true, :on => :create

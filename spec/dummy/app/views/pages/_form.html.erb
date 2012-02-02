@@ -33,8 +33,8 @@ textarea { width: 700px; }
 <%= imperavi :page_article,
   :paths => {
     :images => {
-      :upload => main_app.page_images_path(@page),
-      :list   => main_app.page_images_path(@page, :format => :json)
+      :upload => images_path,
+      :list   => images_path(:format => :json)
     }
   }
 %>
