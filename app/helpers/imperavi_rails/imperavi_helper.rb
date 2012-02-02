@@ -25,7 +25,7 @@ module ImperaviRails
         });
       )
 
-      raw(wrap ? "<script>#{result}</script>") : result)
+      raw(wrap ? "<script>#{result}</script>" : result)
     end
 
     def imperavi_options(options)
