@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328168475.2330928:@value{	I"length:EFiıœI"digest;
-F"%1d04f6ab919d1d9ac896705232dc680bI"source;
-FI"ıœ/*
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328176438.9082072:@value{	I"length:EFi‘ŒI"digest;
+F"%7295314ec8e30b79a0ef541b640b77daI"source;
+FI"‘Œ/*
 	Redactor v7.2.0
 	Updated 20.11.2011
 	
@@ -132,17 +132,6 @@ function detectAndroidWebKit()
 	
 		init: function()
 		{
-			// get redactor css path
-			//if (this.opts.path == '')
-			//{
-			//	path = '';
-			//	$("script").each(function(i,s)
-			//	{
-			//		if (s.src && s.src.match(/\/redactor\.js/)) path = s.src.replace(/redactor\.js(\?.*)?$/, '');										
-			//	});
-			//	this.opts.path = path;
-			//}
-			
 			if (this.opts.air) this.opts.toolbar = 'air';
 			
 			// include lang and toolbar
@@ -1854,4 +1843,4 @@ $.event.special.textunselect={setup:function(data,namespaces){$(this).data("rttt
 })(jQuery);
 ;
 TI"_version;
-F"%a09cd07d51968aa5c5a50a821b915eac
+F"%db9223920cf727eaf04909c69ba5d625

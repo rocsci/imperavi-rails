@@ -3367,3 +3367,116 @@ Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (0ms)
 
 Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:48:54 +0600
 Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (0ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (16.3ms)
+Rendered pages/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Compiled imperavi-rails/imperavi/redactor.js  (1ms)  (pid 20580)
+Served asset /imperavi-rails/imperavi/redactor.js - 200 OK (30ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:53:58 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (15.3ms)
+Rendered pages/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:54:20 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (2ms)
+
+
+Started GET "/imperavi/language.js?_=1328176461219" for 127.0.0.1 at 2012-02-02 15:54:21 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328176461219"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328176461285" for 127.0.0.1 at 2012-02-02 15:54:21 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328176461285"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:54:21 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:54:21 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:54:21 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (1ms)

@@ -18,7 +18,7 @@ module ImperaviRails
       javascript_include_tag imperavi_javascript_path('redactor')
     end
 
-    def imperavi(element, options = {}, wrap = false)
+    def imperavi(element, options = {}, wrap = true)
       result = %Q(
         $(document).ready(function() {
           $('##{element}').redactor(#{imperavi_options(options).to_json});

@@ -1,16 +1,16 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328168475.2318187:@value{I"
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328176438.88389:@value{I"
 class:EFI"BundledAsset;
 FI"id;
-F"%a09cd07d51968aa5c5a50a821b915eacI"logical_path;
+F"%db9223920cf727eaf04909c69ba5d625I"logical_path;
 FI"(imperavi-rails/imperavi/redactor.js;
-FI"pathname;
+TI"pathname;
 F"d/home/tanraya/sandbox/imperavi-rails/app/assets/javascripts/imperavi-rails/imperavi/redactor.jsI"content_type;
 FI"application/javascript;
 FI"
 mtime;
-FI"2012-02-02T13:41:10+06:00;
+FI"2012-02-02T15:49:08+06:00;
 FI"	body;
-FI"õÏ/*
+FI"ÔÎ/*
 	Redactor v7.2.0
 	Updated 20.11.2011
 	
@@ -142,17 +142,6 @@ function detectAndroidWebKit()
 	
 		init: function()
 		{
-			// get redactor css path
-			//if (this.opts.path == '')
-			//{
-			//	path = '';
-			//	$("script").each(function(i,s)
-			//	{
-			//		if (s.src && s.src.match(/\/redactor\.js/)) path = s.src.replace(/redactor\.js(\?.*)?$/, '');										
-			//	});
-			//	this.opts.path = path;
-			//}
-			
 			if (this.opts.air) this.opts.toolbar = 'air';
 			
 			// include lang and toolbar
@@ -1868,8 +1857,8 @@ F["d/home/tanraya/sandbox/imperavi-rails/app/assets/javascripts/imperavi-rails/
 F[{I"	path;
 F"d/home/tanraya/sandbox/imperavi-rails/app/assets/javascripts/imperavi-rails/imperavi/redactor.jsI"
 mtime;
-FIu:	TimeG€u­¤
+FIu:	TimeI€)Ž†Ä
 :@_zoneI"	YEKT;
-T:nano_numi}:nano_deni:submicro"‰0:offseti`TI"hexdigest;
-F"%c3cabc2adc4b46064bdb61df2ee79a5fI"_version;
+T:nano_numi&:nano_deni:submicro")@:offseti`TI"hexdigest;
+F"%3710c868b3f9dfc95bb2cd062fc74a8aI"_version;
 F"%46dde6621c301f4928e3b34efee9e3b5
