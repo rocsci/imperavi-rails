@@ -1,0 +1,35 @@
+<%= form_for(@page) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :article %><br />
+    <%= f.text_area :article %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= include_imperavi_stylesheet %>
+<%= include_imperavi_javascript %>
+
+<%= imperavi :page_article,
+  :toolbar      => :custom,
+  :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+  :image_upload => '',#new_page_image_path(@page),
+  :images_list  => ''#page_images_path(@page, :format => :json)
+%>

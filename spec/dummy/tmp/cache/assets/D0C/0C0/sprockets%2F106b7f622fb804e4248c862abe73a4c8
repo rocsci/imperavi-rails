@@ -1,0 +1,16 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328168326.689576:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%c495f0872450bf385690c8af8d15f014I"logical_path;
+FI"&imperavi_rails/imperavi/hover.png;
+TI"pathname;
+F"]/home/tanraya/sandbox/imperavi-rails/app/assets/images/imperavi_rails/imperavi/hover.pngI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2011-04-18T01:53:28+06:00;
+FI"length;
+FI"	1083;
+FI"digest;
+F"%f03e910efd2569c3e2811a792e6cd869I"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

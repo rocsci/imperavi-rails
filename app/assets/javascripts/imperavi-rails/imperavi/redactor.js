@@ -48,7 +48,6 @@ function detectAndroidWebKit()
 // redactor 
 (function($){
 
-
 	// Initialization	
 	$.fn.redactor = function(options)
 	{				
@@ -63,50 +62,63 @@ function detectAndroidWebKit()
 	
 	// Options and variables	
 	function Construct(el, options) {
-
 		this.opts = $.extend({	
-			air: false,
-			toolbar: 'main', // false, main, mini, air
-			lang: 'ru', // ru, en, fr, ua, pt_br, pl, lt		
-			typo: '/tests/typo.php',
-			autosave: false, // false or url
-			interval: 20, // seconds
-			resize: true,
-			visual: true,
-			focus: false,
+			air                 : false,
+			autosave            : false, // false or url
+			interval            : 20,    // seconds
+			resize              : true,
+			visual              : true,
+			focus               : false,
+			autoclear           : true,
+			removeClasses       : false,
+			removeStyles        : true,
+			convertLinks        : true,
+			autoformat          : true,
+			clearOnInit         : false,
+			overlay             : true,  // modal overlay
+			fileUploadCallback  : false, // callback function
+			imageUploadCallback : false, // callback function
 			
-			image_upload: '/tests/upload.php',
-			imageGetJson: '/tests/images.json?r',
-			imageUploadFunction: false, // callback function
-			
-			file_upload: '/tests/file_upload.php',	
-			file_download: '/tests/file_download.php?file=',		
-			file_delete: '/tests/file_delete.php?delete=',
-			fileUploadFunction: false, // callback function
-			
-			autoclear: true,
-			remove_classes: false,
-			remove_styles: true,
-			convert_links: true,	
-			autoformat: true,
-			init_clear: false,					
-			overlay: true, // modal overlay
+			// Paths to various handlers
+			paths : {
+				// Editor css
+				stylesheets : ['/assets/imperavi-rails/imperavi/wym.css'],
 
-			path: '/activa/imperavi/',
+				// Toolbar
+				toolbar : '/imperavi/toolbar.js',
 
-			// @tanraya
-			plugins : {
-		        file       : '/file?r',
-			    file_edit  : '/file_edit',
-			    image      : '/image?r',
-			    image_edit : '/image_edit',
-			    link       : '/link',
-			    table      : '/table',
-			    video      : '/video'
-		    },
+				// Interface translations
+				language : '/imperavi/language.js',
 
-            // @tanraya
-			includeCss: []
+				// Typograf
+				typograf : '/imperavi/typograf',
+
+				// Dialogs
+				// TODO Add dialogs sizes
+				dialogs : {
+			        file      : '/imperavi/file?r',
+				    fileEdit  : '/imperavi/file_edit',
+				    image     : '/imperavi/image?r',
+				    imageEdit : '/imperavi/image_edit',
+				    link      : '/imperavi/link',
+				    table     : '/imperavi/table',
+				    video     : '/imperavi/video'
+				},
+
+				// Images
+				images : {
+					upload   : '/imperavi/images',
+					download : '/imperavi/images/777',
+					list     : '/imperavi/images.json'
+				},
+
+				// Files
+				files : {
+					upload   : '/imperavi/files',
+					download : '/imperavi/files/777', // /tests/file_download.php?file=
+					remove   : '/imperavi/files/777'  // /tests/file_delete.php?delete=
+				}
+			}
 		}, options);
 		
 		this.$el = $(el);
@@ -117,21 +129,16 @@ function detectAndroidWebKit()
 	
 		init: function()
 		{
-			this.cssUrl = Array();
-			
 			// get redactor css path
-			if (this.opts.path == '')
-			{
-				path = '';
-				$("script").each(function(i,s)
-				{
-					if (s.src && s.src.match(/\/redactor\.js/)) path = s.src.replace(/redactor\.js(\?.*)?$/, '');										
-				});
-				this.opts.path = path;
-			}
-
-            // @tanraya
-			this.cssUrl = this.opts.includeCss
+			//if (this.opts.path == '')
+			//{
+			//	path = '';
+			//	$("script").each(function(i,s)
+			//	{
+			//		if (s.src && s.src.match(/\/redactor\.js/)) path = s.src.replace(/redactor\.js(\?.*)?$/, '');										
+			//	});
+			//	this.opts.path = path;
+			//}
 			
 			if (this.opts.air) this.opts.toolbar = 'air';
 			
@@ -263,7 +270,7 @@ function detectAndroidWebKit()
 		{
 			var html = this.getHtml();
 			$.ajax({
-				url: this.opts.typo,
+				url: this.opts.paths.typograf,
 				type: 'post',
 				data: 'redactor=' + escape(encodeURIComponent(html)),
 				success: function(data)
@@ -300,12 +307,14 @@ function detectAndroidWebKit()
 		include: function()
 		{
 			// lang
-			$('head').append($('<script type="text/javascript" src="' + this.opts.path + 'lang.js"></script>'));
+			$('head').append(
+				$('<script src="' + this.opts.paths.language + '"></script>')
+			);
 			
 			// toolbar
 			// @tanraya
 			if (this.opts.toolbar !== false) {
-			  $('head').append($('<script type="text/javascript" src="' + this.opts.path + 'toolbar.js"></script>')); 		
+			  $('head').append($('<script src="' + this.opts.paths.toolbar + '"></script>')); 		
 			}
 		},
 		
@@ -330,7 +339,7 @@ function detectAndroidWebKit()
 	   		
 			this.redactorWrite(this.getRedactorDoc(html));
 			
-			if (this.opts.init_clear) this.clean();
+			if (this.opts.clearOnInit) this.clean();
 					
 			
 			this.designMode();		
@@ -369,12 +378,12 @@ function detectAndroidWebKit()
 		getRedactorDoc: function(html)
 		{		
 			css = '';
-			for (key in this.cssUrl)
+			for (stylesheet in this.opts.paths.stylesheets)
 			{
-				css += '<link media="all" type="text/css" href="' + this.cssUrl[key] + '" rel="stylesheet">';
+				css += '<link media="all" href="' + this.opts.paths.stylesheets[stylesheet] + '" rel="stylesheet">';
 			}
 
-	    	var frameHtml = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n';
+	    	var frameHtml = '<!DOCTYPE html>\n';
 			frameHtml += '<html><head>' + css + '</head><body>';
 			frameHtml += html;
 			frameHtml += '</body></html>';
@@ -506,8 +515,8 @@ function detectAndroidWebKit()
 			// strip tags
 			html = html.replace(/<(?!\s*\/?(a|br|p|b|i|strong|em|table|tr|td|th|tbody|thead|tfoot|h2|h3|h4)\b)[^>]+>/ig,"");
 			
-			if (this.opts.remove_styles) html = html.replace(/ style=".*?"/g, ''); 
-			if (this.opts.remove_classes) html = html.replace(/ class=".*?"/g, '');
+			if (this.opts.removeStyles) html = html.replace(/ style=".*?"/g, ''); 
+			if (this.opts.removeClasses) html = html.replace(/ class=".*?"/g, '');
 			
 			html = this.tidyUp(html);	
 			
@@ -527,7 +536,7 @@ function detectAndroidWebKit()
 				html = html.replace(/ jQuery(.*?)=\"(.*?)\"/gi, '');
 			}			
 		
-			if (this.opts.convert_links) html = this.convertLinks(html);
+			if (this.opts.convertLinks) html = this.convertLinks(html);
 
 			html = html.replace(/[\t]*/g, ''); 
 			html = html.replace(/[\r\n]*/g, ''); 
@@ -704,7 +713,7 @@ function detectAndroidWebKit()
 				html = html.replace(/<p(.*?)class="redactor_video_box"(.*?)>([\w\W]*?)\<\/p>/gi, "$3");
 		
 				// files replace
-				html = html.replace(/<a(.*?)rel="(.*?)"(.*?)class="redactor_file_link(.*?)"(.*?)>([\w\W]*?)\<\/a>/gi, "<a href=\"" + this.opts.file_download +  "$2\" rel=\"$2\" class=\"redactor_file_link$4\">$6</a>");
+				html = html.replace(/<a(.*?)rel="(.*?)"(.*?)class="redactor_file_link(.*?)"(.*?)>([\w\W]*?)\<\/a>/gi, "<a href=\"" + this.opts.paths.files.download +  "$2\" rel=\"$2\" class=\"redactor_file_link$4\">$6</a>");
 
 				// cut replace	
 				html = html.replace(/<hr class="redactor_cut"\/>/gi, '<!--more-->');
@@ -752,7 +761,7 @@ function detectAndroidWebKit()
 		showVideo: function()
 		{
 			redactorActive = this;
-			this.modalInit(RLANG.video, this.opts.path + this.opts.plugins.video, 600, 360, function()
+			this.modalInit(RLANG.video, this.opts.paths.dialogs.video, 600, 360, function()
 			{
 				$('#redactor_insert_video_area').focus();			
 			});
@@ -786,11 +795,11 @@ function detectAndroidWebKit()
             {
             	// upload params
                 var params = '';
-                if (this.opts.fileUploadFunction) params = this.opts.fileUploadFunction();
+                if (this.opts.fileUploadCallback) params = this.opts.fileUploadCallback();
                 
                 $('#redactor_file').dragupload(
                 { 
-                	url: this.opts.file_upload + params, 
+                	url: this.opts.paths.files.upload + params, 
                 	success: function(data)
 	                {
 		                this.fileUploadCallback(data);
@@ -798,7 +807,7 @@ function detectAndroidWebKit()
                 	}.bind2(this)
                 });
                 
-                this.uploadInit('redactor_file', { auto: true, url: this.opts.file_upload + params, success: function(data) {
+                this.uploadInit('redactor_file', { auto: true, url: this.opts.paths.files.upload + params, success: function(data) {
                     
                     this.fileUploadCallback(data);
                     
@@ -809,7 +818,7 @@ function detectAndroidWebKit()
             
         
             redactorActive = this;
-			this.modalInit(RLANG.file, this.opts.path + this.opts.plugins.file, 500, 400, handler);
+			this.modalInit(RLANG.file, this.opts.paths.dialogs.file, 500, 400, handler);
 		},	
 		fileUploadCallback: function(data)
 		{
@@ -839,18 +848,18 @@ function detectAndroidWebKit()
 			}.bind2(this);
 			
 			redactorActive = this;
-			this.modalInit(RLANG.file, this.opts.path + this.opts.plugins.file_edit, 400, 200, handler);
+			this.modalInit(RLANG.file, this.opts.paths.dialogs.fileEdit, 400, 200, handler);
 		},
 		fileDelete: function(el, file_id)
 		{
 			$(el).remove();
-			$.get(this.opts.file_delete + file_id);
+			$.get(this.opts.paths.files.remove + file_id);
 			redactorActive.frame.get(0).contentWindow.focus();
 			this.modalClose();				
 		},
 		fileDownload: function(el, file_id)
 		{
-			top.location.href = this.opts.file_download + file_id;				
+			top.location.href = this.opts.paths.files.download + file_id;				
 		},		
 
   		/*
@@ -859,7 +868,7 @@ function detectAndroidWebKit()
         showTable: function()
         {       
             redactorActive = this;
-            this.modalInit(RLANG.table, this.opts.path + this.opts.plugins.table, 360, 200);
+            this.modalInit(RLANG.table, this.opts.paths.dialogs.table, 360, 200);
         },
         insertTable: function()
         {           
@@ -1001,7 +1010,7 @@ function detectAndroidWebKit()
             }.bind2(this);       
         
             redactorActive = this;      
-            this.modalInit(RLANG.image, this.opts.path + this.opts.plugins.image_edit, 380, 290, handler);
+            this.modalInit(RLANG.image, this.opts.paths.dialogs.imageEdit, 380, 290, handler);
         },
         imageSave: function(el)
         {
@@ -1035,9 +1044,9 @@ function detectAndroidWebKit()
             var handler = function()
             {
             
-            	if (this.opts.imageGetJson !== false)
+            	if (this.opts.paths.images.list !== false)
             	{
-					$.getJSON(this.opts.imageGetJson, function(data) {
+					$.getJSON(this.opts.paths.images.list, function(data) {
 						  $.each(data, function(key, val)
 						  {
 						  		var img = $('<img src="' + val.thumb + '" rel="' + val.image + '">');
@@ -1057,12 +1066,12 @@ function detectAndroidWebKit()
 
             	// upload params
                 var params = '';
-                if (this.opts.imageUploadFunction) var params = this.opts.imageUploadFunction();
+                if (this.opts.imageUploadCallback) var params = this.opts.imageUploadCallback();
 
                 
                 $('#redactor_file').dragupload(
                 { 
-                	url: this.opts.image_upload + params, 
+                	url: this.opts.paths.images.upload + params, 
                 	success: function(data)
 	                {
 		                this.imageUploadCallback(data);
@@ -1070,7 +1079,7 @@ function detectAndroidWebKit()
                 	}.bind2(this)
                 });
   
-                this.uploadInit('redactor_file', { auto: true, url: this.opts.image_upload + params, trigger: 'redactorUploadBtn', success: function(data) {
+                this.uploadInit('redactor_file', { auto: true, url: this.opts.paths.images.upload + params, trigger: 'redactorUploadBtn', success: function(data) {
                 
                     this.imageUploadCallback(data);
                     
@@ -1081,7 +1090,7 @@ function detectAndroidWebKit()
             
         
             redactorActive = this;
-            this.modalInit(RLANG.image, this.opts.path + this.opts.plugins.image, 570, 450, handler);
+            this.modalInit(RLANG.image, this.opts.paths.dialogs.image, 570, 450, handler);
             
         },
         imageSetThumb: function(data)
@@ -1162,7 +1171,7 @@ function detectAndroidWebKit()
 						
 			}.bind2(this);
 
-			this.modalInit(RLANG.link, this.opts.path + this.opts.plugins.link, 400, 300, handler);
+			this.modalInit(RLANG.link, this.opts.paths.dialogs.link, 400, 300, handler);
 	
 		},	
 		insertLink: function()

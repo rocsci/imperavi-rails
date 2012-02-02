@@ -1,0 +1,28 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328164071.714262:@value{I"
+class:EFI"BundledAsset;
+FI"id;
+F"%1c42b21a0cf2e0a98b4c33aa399155c1I"logical_path;
+F"pages.jsI"pathname;
+FI"*$root/app/assets/javascripts/pages.js;
+FI"content_type;
+FI"application/javascript;
+FI"
+mtime;
+FI"2012-02-02T12:26:43+06:00;
+FI"	body;
+FI"ï// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+;
+;
+FI"asset_paths;
+F[I"*$root/app/assets/javascripts/pages.js;
+FI"dependency_paths;
+F[{I"	path;
+FI"*$root/app/assets/javascripts/pages.js;
+FI"
+mtime;
+FIu:	TimeFÄÙÁ∑j
+:@_zoneI"	YEKT;
+T:nano_numi:nano_deni:submicro"%ê:offseti`TI"hexdigest;
+F"%31f2763935be0dcf666160db996ee952I"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

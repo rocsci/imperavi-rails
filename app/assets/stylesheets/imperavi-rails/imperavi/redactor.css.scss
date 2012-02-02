@@ -116,27 +116,27 @@ body .imp_redactor_resize div {
 /* =Skin
 -----------------------------------------------------------------------------*/
 body .imp_redactor_box .imp_redactor_toolbar {
-	background: asset-url("imperavi/bg.png", image) repeat-x top #d1d1d1;
+	background: asset-url("imperavi_rails/imperavi/bg.png", image) repeat-x top #d1d1d1;
 	border-bottom: 1px solid #b2b2b2;
 }
 body .imp_redactor_box .imp_redactor_toolbar li.act {
-	background: asset-url("imperavi/hover.png", image) repeat-x;
+	background: asset-url("imperavi_rails/imperavi/hover.png", image) repeat-x;
 }
 body .imp_redactor_box .imp_redactor_toolbar li a {
-	background: asset-url("imperavi/icons.png", image) no-repeat;	
+	background: asset-url("imperavi_rails/imperavi/icons.png", image) no-repeat;	
 }
 body .imp_redactor_box .imp_redactor_toolbar li:hover {
-	background: asset-url("imperavi/hover.png", image) repeat-x;
+	background: asset-url("imperavi_rails/imperavi/hover.png", image) repeat-x;
 }
 body .imp_redactor_box .imp_redactor_resize {
 	border-top: 1px solid #d7d6d6 !important;
-	background: asset-url("imperavi/bg.png", image) repeat-x !important;	
+	background: asset-url("imperavi_rails/imperavi/bg.png", image) repeat-x !important;	
 }
 body .imp_redactor_box .imp_redactor_resize div {
-	background: asset-url("imperavi/resizer.gif", image) center no-repeat !important;
+	background: asset-url("imperavi_rails/imperavi/resizer.gif", image) center no-repeat !important;
 }
 body .imp_redactor_box .imp_redactor_toolbar li.separator {
-	background: asset-url("imperavi/separator.png", image) no-repeat right;
+	background: asset-url("imperavi_rails/imperavi/separator.png", image) no-repeat right;
 }
 
 
@@ -193,7 +193,7 @@ body .imp_redactor_toolbar li a.imp_btn_format_clean { background-position: -928
 #redactor_imp_modal_overlay[id] { position: fixed; }
 
 #redactor_imp_modal {
-	background: asset-url("imperavi/bg_modal.png", image) #dbdbda repeat-x top;
+	background: asset-url("imperavi_rails/imperavi/bg_modal.png", image) #dbdbda repeat-x top;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -222,7 +222,7 @@ body .imp_redactor_toolbar li a.imp_btn_format_clean { background-position: -928
 	top: -11px;
 	width: 30px;
 	height: 30px;
-	background: asset-url("imperavi/close.png", image) no-repeat;
+	background: asset-url("imperavi_rails/imperavi/close.png", image) no-repeat;
 	cursor: pointer;
 }
 .redactor_ruler td {

@@ -1,4 +1,6 @@
 ImperaviRails::Engine.routes.draw do
+  resources :images
+
   get '/file'       => 'imperavi#file',       :as => :file
   get '/file_edit'  => 'imperavi#file_edit',  :as => :file_edit
   get '/image'      => 'imperavi#image',      :as => :image
@@ -7,5 +9,6 @@ ImperaviRails::Engine.routes.draw do
   get '/table'      => 'imperavi#table',      :as => :table
   get '/video'      => 'imperavi#video',      :as => :video
   get '/toolbar'    => 'imperavi#toolbar',    :as => :toolbar
-  get '/lang'       => 'imperavi#lang',       :as => :lang
+  get '/language'   => 'imperavi#language',   :as => :language
+  get '/typograf'   => 'imperavi#typograf',   :as => :typograf
 end

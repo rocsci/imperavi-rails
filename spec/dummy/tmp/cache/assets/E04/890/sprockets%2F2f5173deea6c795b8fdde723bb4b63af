@@ -1,0 +1,61 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328164071.7170372:@value{I"
+class:EFI"BundledAsset;
+FI"id;
+F"%23aa23879c7079c8842264b8327d0368I"logical_path;
+FI"application.js;
+TI"pathname;
+FI"0$root/app/assets/javascripts/application.js;
+FI"content_type;
+FI"application/javascript;
+FI"
+mtime;
+FI"2012-02-02T12:26:43+06:00;
+FI"	body;
+FI"î// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+;
+;
+FI"asset_paths;
+F[	"}/home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/jquery-rails-1.0.19/vendor/assets/javascripts/jquery.js"|/home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/jquery-rails-1.0.19/vendor/assets/javascripts/jquery_ujs.jsI"*$root/app/assets/javascripts/pages.js;
+FI"0$root/app/assets/javascripts/application.js;
+FI"dependency_paths;
+F[
+{I"	path;
+FI"0$root/app/assets/javascripts/application.js;
+FI"
+mtime;
+FIu:	TimeEÄ÷j¬
+:@_zoneI"	YEKT;
+T:nano_numiÜ:nano_deni:submicro"d`:offseti`TI"hexdigest;
+F"%549ddbd6cc7eb5cac3ef01164f35f695{I"	path;
+FI"!$root/app/assets/javascripts;
+FI"
+mtime;
+FIu;FÄÙÁ∑j
+;I"	YEKT;
+T;i;i;"%ê;i`TI"hexdigest;
+F"%55ca474a4927ec7aa1ee046bfa3239bf{I"	path;
+F"}/home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/jquery-rails-1.0.19/vendor/assets/javascripts/jquery.jsI"
+mtime;
+FIu;FÄœ∞[A
+;I"	YEKT;
+T;i%;i;" ;i`TI"hexdigest;
+F"%683679b346b30943f8589b640966202a{I"	path;
+F"|/home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/jquery-rails-1.0.19/vendor/assets/javascripts/jquery_ujs.jsI"
+mtime;
+FIu;FÄœ∞[A
+;I"	YEKT;
+T;i%;i;" ;i`TI"hexdigest;
+F"%2caafa0c2617f9985c1a0b07ebaefadf{I"	path;
+FI"*$root/app/assets/javascripts/pages.js;
+FI"
+mtime;
+FIu;FÄÙÁ∑j
+;I"	YEKT;
+T;i;i;"%ê;i`TI"hexdigest;
+F"%31f2763935be0dcf666160db996ee952I"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5
