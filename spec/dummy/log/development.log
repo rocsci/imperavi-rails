@@ -1961,3 +1961,1409 @@ ActionController::RoutingError (No route matches [GET] "/imperavi/images.json"):
   
 
 Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 13:56:08 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (17.5ms)
+Rendered pages/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 83ms (Views: 81.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 13:56:08 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 13:56:08 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 13:56:08 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 13:56:08 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 13:56:08 +0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 13:56:08 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css?body=1" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js?body=1" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328169369210" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328169369210"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328169369254" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328169369254"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (3ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/wym.css" for 127.0.0.1 at 2012-02-02 13:56:09 +0600
+Served asset /imperavi-rails/imperavi/wym.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/hover.png" for 127.0.0.1 at 2012-02-02 13:56:10 +0600
+Served asset /imperavi_rails/imperavi/hover.png - 304 Not Modified (1ms)
+
+
+Started GET "/imperavi/image?r" for 127.0.0.1 at 2012-02-02 13:56:10 +0600
+  Processing by ImperaviRails::ImperaviController#image as */*
+  Parameters: {"r"=>nil}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg_modal.png" for 127.0.0.1 at 2012-02-02 13:56:10 +0600
+Served asset /imperavi_rails/imperavi/bg_modal.png - 304 Not Modified (3ms)
+
+
+Started GET "/imperavi/images.json" for 127.0.0.1 at 2012-02-02 13:56:10 +0600
+
+ActionController::RoutingError (uninitialized constant ImperaviRails::ImagesController):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/close.png" for 127.0.0.1 at 2012-02-02 13:56:10 +0600
+Served asset /imperavi_rails/imperavi/close.png - 304 Not Modified (2ms)
+
+
+Started GET "/imperavi/image?r" for 127.0.0.1 at 2012-02-02 13:56:17 +0600
+  Processing by ImperaviRails::ImperaviController#image as */*
+  Parameters: {"r"=>nil}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/images.json" for 127.0.0.1 at 2012-02-02 13:56:17 +0600
+
+ActionController::RoutingError (uninitialized constant ImperaviRails::ImagesController):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (11.5ms)
+Rendered pages/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js?body=1" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328173477388" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+
+SyntaxError (/home/tanraya/sandbox/imperavi-rails/app/helpers/imperavi_rails/imperavi_helper.rb:81: syntax error, unexpected keyword_end, expecting '}'):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.1ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328173477426" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+
+SyntaxError (/home/tanraya/sandbox/imperavi-rails/app/helpers/imperavi_rails/imperavi_helper.rb:81: syntax error, unexpected keyword_end, expecting '}'):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:04:37 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:06:04 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (11.3ms)
+Rendered pages/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328173565459" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328173565459"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328173565503" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328173565503"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/wym.css" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /imperavi-rails/imperavi/wym.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:06:05 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/hover.png" for 127.0.0.1 at 2012-02-02 15:06:14 +0600
+Served asset /imperavi_rails/imperavi/hover.png - 304 Not Modified (2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:06:17 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (19.4ms)
+Rendered pages/new.html.erb within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 54ms
+
+ActionView::Template::Error (exception class/object expected):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__2790210810537952254_20569860'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__3705578806912170257_20444820'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:06:36 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (22.9ms)
+Rendered pages/new.html.erb within layouts/application (27.4ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error ({"toolbar":"custom","include_css":"/assets/imperavi/wym.css","image_upload":"","images_list":"","air":false,"autosave":false,"interval":20,"resize":true,"visual":true,"focus":false,"autoclear":true,"removeClasses":false,"removeStyles":true,"convertLinks":true,"autoformat":true,"clearOnInit":false,"overlay":true,"fileUploadCallback":false,"imageUploadCallback":false,"paths":{"stylesheets":["/assets/imperavi-rails/imperavi/wym.css"],"toolbar":"/imperavi/toolbar.js","language":"/imperavi/language.js","typograf":"/imperavi/typograf","dialogs":{"file":"/imperavi/file?r","fileEdit":"/imperavi/file_edit","image":"/imperavi/image?r","imageEdit":"/imperavi/image_edit","link":"/imperavi/link","table":"/imperavi/table","video":"/imperavi/video"},"images":{"upload":"/imperavi/images","download":"/imperavi/images/777","list":"/imperavi/images.json"},"files":{"upload":"/imperavi/files","download":"/imperavi/files/777","remove":"/imperavi/files/777"}}}):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__4439409337732107800_19266560'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__1559310698215167192_19134020'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.7ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:06:53 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (12.2ms)
+Rendered pages/new.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error ({"toolbar":"custom","include_css":"/assets/imperavi/wym.css","image_upload":"","images_list":"","air":false,"autosave":false,"interval":20,"resize":true,"visual":true,"focus":false,"autoclear":true,"removeClasses":false,"removeStyles":true,"convertLinks":true,"autoformat":true,"clearOnInit":false,"overlay":true,"fileUploadCallback":false,"imageUploadCallback":false,"paths":{"stylesheets":["/assets/imperavi-rails/imperavi/wym.css"],"toolbar":"/imperavi/toolbar.js","language":"/imperavi/language.js","typograf":"/imperavi/typograf","dialogs":{"file":"/imperavi/file?r","fileEdit":"/imperavi/file_edit","image":"/imperavi/image?r","imageEdit":"/imperavi/image_edit","link":"/imperavi/link","table":"/imperavi/table","video":"/imperavi/video"},"images":{"upload":"/imperavi/images","download":"/imperavi/images/777","list":"/imperavi/images.json"},"files":{"upload":"/imperavi/files","download":"/imperavi/files/777","remove":"/imperavi/files/777"}}}):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__4439409337732107800_19266560'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__1559310698215167192_19134020'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:13:32 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (38.0ms)
+Rendered pages/new.html.erb within layouts/application (38.5ms)
+Completed 500 Internal Server Error in 43ms
+
+ActionView::Template::Error ({"toolbar":"custom","include_css":"/assets/imperavi/wym.css","image_upload":"","images_list":"","air":false,"autosave":false,"interval":20,"resize":true,"visual":true,"focus":false,"autoclear":true,"removeClasses":false,"removeStyles":true,"convertLinks":true,"autoformat":true,"clearOnInit":false,"overlay":true,"fileUploadCallback":false,"imageUploadCallback":false,"paths":{"stylesheets":["/assets/imperavi-rails/imperavi/wym.css"],"toolbar":"/imperavi/toolbar.js","language":"/imperavi/language.js","typograf":"/imperavi/typograf","dialogs":{"file":"/imperavi/file?r","fileEdit":"/imperavi/file_edit","image":"/imperavi/image?r","imageEdit":"/imperavi/image_edit","link":"/imperavi/link","table":"/imperavi/table","video":"/imperavi/video"},"images":{"upload":"/imperavi/images","download":"/imperavi/images/777","list":"/imperavi/images.json"},"files":{"upload":"/imperavi/files","download":"/imperavi/files/777","remove":"/imperavi/files/777"}}}):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__4439409337732107800_19266560'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__1559310698215167192_19134020'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:13:33 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (11.4ms)
+Rendered pages/new.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error ({"toolbar":"custom","include_css":"/assets/imperavi/wym.css","image_upload":"","images_list":"","air":false,"autosave":false,"interval":20,"resize":true,"visual":true,"focus":false,"autoclear":true,"removeClasses":false,"removeStyles":true,"convertLinks":true,"autoformat":true,"clearOnInit":false,"overlay":true,"fileUploadCallback":false,"imageUploadCallback":false,"paths":{"stylesheets":["/assets/imperavi-rails/imperavi/wym.css"],"toolbar":"/imperavi/toolbar.js","language":"/imperavi/language.js","typograf":"/imperavi/typograf","dialogs":{"file":"/imperavi/file?r","fileEdit":"/imperavi/file_edit","image":"/imperavi/image?r","imageEdit":"/imperavi/image_edit","link":"/imperavi/link","table":"/imperavi/table","video":"/imperavi/video"},"images":{"upload":"/imperavi/images","download":"/imperavi/images/777","list":"/imperavi/images.json"},"files":{"upload":"/imperavi/files","download":"/imperavi/files/777","remove":"/imperavi/files/777"}}}):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__4439409337732107800_19266560'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__1559310698215167192_19134020'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:13:41 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (22.3ms)
+Rendered pages/new.html.erb within layouts/application (26.4ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (undefined method `asset_paths' for ActionView::Helpers::AssetTagHelper:Module):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2354105126983665436_20252340'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___867342838070037074_20156320'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.1ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:15:21 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (12.2ms)
+Rendered pages/new.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `asset_paths' for ActionView::Helpers::AssetTagHelper:Module):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2354105126983665436_20252340'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___867342838070037074_20156320'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:15:23 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (56.5ms)
+Rendered pages/new.html.erb within layouts/application (57.1ms)
+Completed 500 Internal Server Error in 62ms
+
+ActionView::Template::Error (undefined method `asset_paths' for ActionView::Helpers::AssetTagHelper:Module):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2354105126983665436_20252340'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___867342838070037074_20156320'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:15:41 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (11.5ms)
+Rendered pages/new.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `asset_paths' for ActionView::Helpers::AssetTagHelper:Module):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2354105126983665436_20252340'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___867342838070037074_20156320'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.0ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:15:47 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (20.9ms)
+Rendered pages/new.html.erb within layouts/application (24.9ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (undefined method `asset_paths' for ActionView::Helpers::AssetTagHelper:Module):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___1245402668874147952_17754300'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___3083816071139425117_17650920'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.4ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:16:41 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (20.2ms)
+Rendered pages/new.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (exception class/object expected):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___3804558756371856311_33079440'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___322632615607693656_32870400'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.8ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:16:54 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (115.9ms)
+Rendered pages/new.html.erb within layouts/application (119.9ms)
+Completed 500 Internal Server Error in 128ms
+
+ActionView::Template::Error (undefined local variable or method `source' for #<#<Class:0x0000000293fb50>:0x0000000295c980>):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2851033674649943325_22285960'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___2277452759567079230_22068500'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:17:17 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (20.9ms)
+Rendered pages/new.html.erb within layouts/application (24.9ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (/fonts/whatta/fucka.eot):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2722832358151064517_32872140'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___2282677631080474667_32661680'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.3ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:21:01 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (20.6ms)
+Rendered pages/new.html.erb within layouts/application (24.4ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (/fonts/whatta/fucka.eot):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__1092652934404532841_22404380'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__3407242033144013675_22273980'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.7ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:21:03 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (11.6ms)
+Rendered pages/new.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (/fonts/whatta/fucka.eot):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__1092652934404532841_22404380'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__3407242033144013675_22273980'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:21:15 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (19.4ms)
+Rendered pages/new.html.erb within layouts/application (23.3ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (/assets/fuck):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__4448907090063133735_15942800'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__2927385380153535026_15814560'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.3ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:23:42 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (137.2ms)
+Rendered pages/new.html.erb within layouts/application (141.0ms)
+Completed 500 Internal Server Error in 149ms
+
+ActionView::Template::Error (undefined method `path_to_asset' for #<#<Class:0x00000003e26488>:0x00000003e2b500>):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___3110259011397591497_33366880'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__711049402602664929_33070060'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:27:55 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (20.8ms)
+Rendered pages/new.html.erb within layouts/application (24.7ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (/assets/samn.jpg):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2484225571705415555_24305500'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__1825972760675834159_24094520'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.4ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:28:21 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (95.9ms)
+Rendered pages/new.html.erb within layouts/application (99.3ms)
+Completed 500 Internal Server Error in 108ms
+
+ActionView::Template::Error (undefined method `stylesheets_path' for #<#<Class:0x00000001866888>:0x00000001b1fc00>):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb__3998214365320928663_18699960'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb__2876098879786111308_17926760'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.3ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:28:30 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (21.6ms)
+Rendered pages/new.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (/assets/samn):
+    27: <%= include_imperavi_stylesheet %>
+    28: <%= include_imperavi_javascript %>
+    29: 
+    30: <%= imperavi :page_article,
+    31:   :toolbar      => :custom,
+    32:   :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
+    33:   :image_upload => '',#new_page_image_path(@page),
+  app/views/pages/_form.html.erb:30:in `_app_views_pages__form_html_erb___2162774644819957970_24303820'
+  app/views/pages/new.html.erb:3:in `_app_views_pages_new_html_erb___365454380405304105_24094080'
+  app/controllers/pages_controller.rb:29:in `new'
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.6ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (18.8ms)
+Rendered pages/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js?body=1" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328175109916" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328175109916"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328175109958" for 127.0.0.1 at 2012-02-02 15:31:49 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328175109958"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:31:50 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:31:50 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:31:50 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/wym.css" for 127.0.0.1 at 2012-02-02 15:31:50 +0600
+Served asset /wym.css - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wym.css"):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/hover.png" for 127.0.0.1 at 2012-02-02 15:32:48 +0600
+Served asset /imperavi_rails/imperavi/hover.png - 304 Not Modified (2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:32:50 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (18.6ms)
+Rendered pages/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 85ms (Views: 83.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js?body=1" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328175171306" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328175171306"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328175171368" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328175171368"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/wym.css" for 127.0.0.1 at 2012-02-02 15:32:51 +0600
+Served asset /imperavi-rails/imperavi/wym.css - 304 Not Modified (2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (18.7ms)
+Rendered pages/new.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /scaffold.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css?body=1" for 127.0.0.1 at 2012-02-02 15:36:19 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328175380177" for 127.0.0.1 at 2012-02-02 15:36:20 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328175380177"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328175380242" for 127.0.0.1 at 2012-02-02 15:36:20 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328175380242"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.6ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:36:20 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:36:20 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/wym.css" for 127.0.0.1 at 2012-02-02 15:36:20 +0600
+Served asset /imperavi-rails/imperavi/wym.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:36:20 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/hover.png" for 127.0.0.1 at 2012-02-02 15:38:16 +0600
+Served asset /imperavi_rails/imperavi/hover.png - 304 Not Modified (1ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:38:29 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (12.5ms)
+Rendered pages/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 200 OK (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 200 OK (3ms)
+
+
+Started GET "/imperavi/language.js?_=1328175510330" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328175510330"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328175510391" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328175510391"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.7ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/wym" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /imperavi-rails/imperavi/wym - 200 OK (2ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:38:30 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (1ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (12.9ms)
+Rendered pages/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:43:02 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (2ms)
+
+
+Started GET "/imperavi/language.js?_=1328175783118" for 127.0.0.1 at 2012-02-02 15:43:03 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328175783118"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328175783176" for 127.0.0.1 at 2012-02-02 15:43:03 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328175783176"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:43:03 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:43:03 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:43:03 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (42.4ms)
+Rendered pages/new.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 68ms (Views: 67.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (2ms)
+
+
+Started GET "/imperavi/language.js?_=1328175802914" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328175802914"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328175802980" for 127.0.0.1 at 2012-02-02 15:43:22 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328175802980"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:43:23 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:43:23 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:43:23 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/hover.png" for 127.0.0.1 at 2012-02-02 15:46:08 +0600
+Served asset /imperavi_rails/imperavi/hover.png - 304 Not Modified (2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:46:08 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (19.6ms)
+Rendered pages/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /scaffold.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (2ms)
+
+
+Started GET "/imperavi/language.js?_=1328175969444" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328175969444"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328175969479" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328175969479"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:46:09 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (1ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/hover.png" for 127.0.0.1 at 2012-02-02 15:46:36 +0600
+Served asset /imperavi_rails/imperavi/hover.png - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/image" for 127.0.0.1 at 2012-02-02 15:46:36 +0600
+  Processing by ImperaviRails::ImperaviController#image as */*
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image.html.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg_modal.png" for 127.0.0.1 at 2012-02-02 15:46:36 +0600
+Served asset /imperavi_rails/imperavi/bg_modal.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/close.png" for 127.0.0.1 at 2012-02-02 15:46:36 +0600
+Served asset /imperavi_rails/imperavi/close.png - 304 Not Modified (2ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:46:36 +0600
+  Processing by PagesController#new as JSON
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/imperavi/video" for 127.0.0.1 at 2012-02-02 15:46:56 +0600
+  Processing by ImperaviRails::ImperaviController#video as */*
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/video.html.erb (0.4ms)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (59.3ms)
+Rendered pages/new.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 66ms (Views: 65.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328176106460" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328176106460"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328176106496" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328176106496"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:48:26 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/hover.png" for 127.0.0.1 at 2012-02-02 15:48:51 +0600
+Served asset /imperavi_rails/imperavi/hover.png - 304 Not Modified (0ms)
+
+
+Started GET "/pages/new" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+  Processing by PagesController#new as HTML
+Rendered pages/_form.html.erb (41.0ms)
+Rendered pages/new.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.css" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /imperavi-rails/imperavi/redactor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328176133845" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328176133845"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328176133884" for 127.0.0.1 at 2012-02-02 15:48:53 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328176133884"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/bg.png" for 127.0.0.1 at 2012-02-02 15:48:54 +0600
+Served asset /imperavi_rails/imperavi/bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/resizer.gif" for 127.0.0.1 at 2012-02-02 15:48:54 +0600
+Served asset /imperavi_rails/imperavi/resizer.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi_rails/imperavi/icons.png" for 127.0.0.1 at 2012-02-02 15:48:54 +0600
+Served asset /imperavi_rails/imperavi/icons.png - 304 Not Modified (0ms)

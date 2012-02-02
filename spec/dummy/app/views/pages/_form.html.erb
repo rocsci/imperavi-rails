@@ -26,10 +26,4 @@
 
 <%= include_imperavi_stylesheet %>
 <%= include_imperavi_javascript %>
-
-<%= imperavi :page_article,
-  :toolbar      => :custom,
-  :include_css  => stylesheet_link_tag("imperavi/wym").match(/href="([^"]+)"/)[1],
-  :image_upload => '',#new_page_image_path(@page),
-  :images_list  => ''#page_images_path(@page, :format => :json)
-%>
+<%= imperavi :page_article %>

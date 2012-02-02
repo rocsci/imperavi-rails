@@ -129,17 +129,6 @@ function detectAndroidWebKit()
 	
 		init: function()
 		{
-			// get redactor css path
-			//if (this.opts.path == '')
-			//{
-			//	path = '';
-			//	$("script").each(function(i,s)
-			//	{
-			//		if (s.src && s.src.match(/\/redactor\.js/)) path = s.src.replace(/redactor\.js(\?.*)?$/, '');										
-			//	});
-			//	this.opts.path = path;
-			//}
-			
 			if (this.opts.air) this.opts.toolbar = 'air';
 			
 			// include lang and toolbar

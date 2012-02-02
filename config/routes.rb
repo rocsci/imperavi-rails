@@ -1,6 +1,4 @@
 ImperaviRails::Engine.routes.draw do
-  resources :images
-
   get '/file'       => 'imperavi#file',       :as => :file
   get '/file_edit'  => 'imperavi#file_edit',  :as => :file_edit
   get '/image'      => 'imperavi#image',      :as => :image
