@@ -9129,3 +9129,184 @@ Served asset /pages.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 17:46:22 +0600
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages/1/edit" for 127.0.0.1 at 2012-02-02 18:00:31 +0600
+  Processing by PagesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered pages/_form.html.erb (13.3ms)
+Rendered pages/edit.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 104ms (Views: 101.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/redactor.js" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+Served asset /imperavi-rails/imperavi/redactor.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/language.js?_=1328184032729" for 127.0.0.1 at 2012-02-02 18:00:32 +0600
+  Processing by ImperaviRails::ImperaviController#language as JS
+  Parameters: {"_"=>"1328184032729"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/language.js.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/toolbar.js?_=1328184033150" for 127.0.0.1 at 2012-02-02 18:00:33 +0600
+  Processing by ImperaviRails::ImperaviController#toolbar as JS
+  Parameters: {"_"=>"1328184033150"}
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/toolbar.js.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/imperavi-rails/imperavi/wym" for 127.0.0.1 at 2012-02-02 18:00:33 +0600
+Served asset /imperavi-rails/imperavi/wym - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi/image" for 127.0.0.1 at 2012-02-02 18:00:35 +0600
+  Processing by ImperaviRails::ImperaviController#image as */*
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/1/images.json" for 127.0.0.1 at 2012-02-02 18:00:35 +0600
+  Processing by ImagesController#index as JSON
+  Parameters: {"page_id"=>"1"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mImage Load (22.0ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 1 AND "images"."imageable_type" = 'Page' ORDER BY updated_at[0m
+Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/imperavi/image_edit" for 127.0.0.1 at 2012-02-02 18:02:33 +0600
+  Processing by ImperaviRails::ImperaviController#image_edit as */*
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image_edit.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imperavi/image" for 127.0.0.1 at 2012-02-02 19:26:54 +0600
+  Processing by ImperaviRails::ImperaviController#image as */*
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/1/images.json" for 127.0.0.1 at 2012-02-02 19:26:54 +0600
+  Processing by ImagesController#index as JSON
+  Parameters: {"page_id"=>"1"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 1 AND "images"."imageable_type" = 'Page' ORDER BY updated_at[0m
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/imperavi/image" for 127.0.0.1 at 2012-02-02 19:26:56 +0600
+  Processing by ImperaviRails::ImperaviController#image as */*
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/1/images.json" for 127.0.0.1 at 2012-02-02 19:26:56 +0600
+  Processing by ImagesController#index as JSON
+  Parameters: {"page_id"=>"1"}
+  [1m[35mPage Load (0.1ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 1 AND "images"."imageable_type" = 'Page' ORDER BY updated_at[0m
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/imperavi/image_edit" for 127.0.0.1 at 2012-02-02 19:27:02 +0600
+  Processing by ImperaviRails::ImperaviController#image_edit as */*
+Rendered /home/tanraya/sandbox/imperavi-rails/app/views/imperavi_rails/imperavi/image_edit.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/pages/1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+  Processing by PagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nJ2pPxvx7pjAAm8oqp6cRhUzmRKc5mxyS/MpksQjWhw=", "page"=>{"title"=>"Test page", "article"=>"\r\n<p><img class=\"img_left\" alt=\"\" src=\"/media/BAhbB1sHOgZmSSIiMjAxMi8wMi8wMi8xN18wNl8wOV84OTRfNC5qcGcGOgZFVFsIOgZwOhRyZXNpemVfYW5kX2Nyb3B7CDoKd2lkdGhpAiwBOgtoZWlnaHRpAfo6DGdyYXZpdHlJIgZjBjsGRg\">Занялся я как-то оптимизацией скорости работы своего скрипта. Алгоритм был уже вовсю отполирован, распараллелен и выполнялся уже более чем за сносное время. Лишь изредка, облизывая части кода, шебурша места, использующие внешние команды и приводя в благоухающую гармонию встроенными командами оболочки, обращал внимание на застоявшуюся роль труженика — потокового редактора sed, всё так же старательно обрабатывавшего регулярные выражения в моём расцветающем скрипте.&nbsp;</p>\r\n<p>Существует множество мест, где люди грызут друг другу глотки и отстаивают честь своего любимого редактора в грозной войне sed vs awk vs grep vs&nbsp;…&nbsp;</p>\r\n<p>Тем не менее, большинство знает, что замена вызовов внешних команд на внутренние зачастую значительно ускоряет критические места скрипта, заставляет улыбаться автора, тратя меньше его времени на ожидание за чашкой кофе «пока закончится обработка». Это, в некотором смысле, некоторая неадекватность, если он знает язык Си и может значительно ускорить программу переписыванием кода на Сях; но не следует сразу записывать его в сумасшедшие — некоторые скрипты довольно объемны для переноса кода и используют различные команды, заставляя код пухнуть от нахальных вставок системных вызовов exec().\r\n<br>&nbsp;&nbsp;&nbsp;&nbsp;Итак, как бы то ни было, разработчики bash третьей версии наделили нас возможностью пользоваться встроенными регулярными выражениями внутри команды [[ при помощи =~.\r\n<br>Большинство результатов на гугление про такую способность bash выносят один и тот же вердикт — «пользоваться регулярными выражениями внутри bash — моветон».</p>"}, "commit"=>"Update Page", "id"=>"1"}
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://localhost:3000/pages/1
+Completed 302 Found in 10ms
+
+
+Started GET "/pages/1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+  Processing by PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPage Load (0.1ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered pages/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-02 19:28:06 +0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/imperavi" for 127.0.0.1 at 2012-02-02 20:08:40 +0600
+
+ActionController::RoutingError (No route matches [GET] "/imperavi"):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/imperavi-rails/" for 127.0.0.1 at 2012-02-02 20:08:47 +0600
+
+ActionController::RoutingError (No route matches [GET] "/imperavi-rails"):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/imperavi-rails/" for 127.0.0.1 at 2012-02-02 20:09:00 +0600
+
+ActionController::RoutingError (No route matches [GET] "/imperavi-rails"):
+  
+
+Rendered /home/tanraya/.rvm/gems/ruby-1.9.3-p0-falcon@imperavi-rails/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
