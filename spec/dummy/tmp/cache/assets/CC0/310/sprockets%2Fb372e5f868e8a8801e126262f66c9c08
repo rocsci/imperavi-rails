@@ -1,16 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328168325.803761:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%0b7160c081e8d4bbe203da70065e58feI"logical_path;
-FI"(imperavi_rails/imperavi/resizer.gif;
-TI"pathname;
-F"_/home/tanraya/sandbox/imperavi-rails/app/assets/images/imperavi_rails/imperavi/resizer.gifI"content_type;
-FI"image/gif;
-FI"
-mtime;
-FI"2009-10-07T13:28:40+06:00;
-FI"length;
-FI"81;
-FI"digest;
-F"%3b6475331c6aafe1bcc9e26f1767bf08I"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

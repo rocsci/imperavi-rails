@@ -1,16 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328168325.7669873:@value{I"
-class:EFI"StaticAsset;
-FI"id;
-F"%af858241a5c5d5abc97d76534acb4e92I"logical_path;
-FI"#imperavi_rails/imperavi/bg.png;
-TI"pathname;
-F"Z/home/tanraya/sandbox/imperavi-rails/app/assets/images/imperavi_rails/imperavi/bg.pngI"content_type;
-FI"image/png;
-FI"
-mtime;
-FI"2011-01-30T00:28:27+05:00;
-FI"length;
-FI"163;
-FI"digest;
-F"%9eb905789c5c5e251e7e6be8aa5cf938I"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5

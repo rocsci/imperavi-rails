@@ -1,57 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328182321.871244:@value{I"
-class:EFI"BundledAsset;
-FI"id;
-F"%2c08329e42e73c071dcd6860a83afef0I"logical_path;
-FI"application.css;
-TI"pathname;
-FI"1$root/app/assets/stylesheets/application.css;
-FI"content_type;
-FI"text/css;
-FI"
-mtime;
-FI"2012-02-02T17:32:00+06:00;
-FI"	body;
-FI"c/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
-*/
-
-
-@import "imperavi-rails/imperavi/wym";
-;
-FI"asset_paths;
-F[I"1$root/app/assets/stylesheets/application.css;
-FI"+$root/app/assets/stylesheets/pages.css;
-FI".$root/app/assets/stylesheets/scaffold.css;
-FI"dependency_paths;
-F[	{I"	path;
-FI"1$root/app/assets/stylesheets/application.css;
-FI"
-mtime;
-FIu:	TimeKÄü„Ä
-:@_zoneI"	YEKT;
-T:nano_numi:nano_deni:submicro"S`:offseti`TI"hexdigest;
-F"%69baad697490e074a98b71e78590162c{I"	path;
-FI"!$root/app/assets/stylesheets;
-FI"
-mtime;
-FIu;FÄÙd∏j
-;I"	YEKT;
-T;i;i;"%Ä;i`TI"hexdigest;
-F"%1babf16d201ca401aef3defc0b3aa00b{I"	path;
-FI"+$root/app/assets/stylesheets/pages.css;
-FI"
-mtime;
-FIu;FÄ4∏j
-;I"	YEKT;
-T;i;i;"%ê;i`TI"hexdigest;
-F"%86bc49d9e548d142af31e2cc4a6e56e8{I"	path;
-FI".$root/app/assets/stylesheets/scaffold.css;
-FI"
-mtime;
-FIu;FÄÙd∏j
-;I"	YEKT;
-T;i;i;"%Ä;i`TI"hexdigest;
-F"%deae229dd6ee04fbe09269428804d96aI"_version;
-F"%46dde6621c301f4928e3b34efee9e3b5
