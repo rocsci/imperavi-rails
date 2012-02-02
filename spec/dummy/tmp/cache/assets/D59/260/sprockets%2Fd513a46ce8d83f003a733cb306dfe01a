@@ -1,16 +1,16 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328176438.88389:@value{I"
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1328181552.8162677:@value{I"
 class:EFI"BundledAsset;
 FI"id;
-F"%db9223920cf727eaf04909c69ba5d625I"logical_path;
+F"%d9f2ee48382202097cfdbf35db8e16e0I"logical_path;
 FI"(imperavi-rails/imperavi/redactor.js;
 TI"pathname;
 F"d/home/tanraya/sandbox/imperavi-rails/app/assets/javascripts/imperavi-rails/imperavi/redactor.jsI"content_type;
 FI"application/javascript;
 FI"
 mtime;
-FI"2012-02-02T15:49:08+06:00;
+FI"2012-02-02T17:19:10+06:00;
 FI"	body;
-FI"ÔÎ/*
+FI"—Î/*
 	Redactor v7.2.0
 	Updated 20.11.2011
 	
@@ -1022,9 +1022,14 @@ function detectAndroidWebKit()
             if ($('#redactor_form_image_align') != 0)
             {
                 var float = $('#redactor_form_image_align').val();
-                
-                if (float == 'left') $(el).css({ float: 'left', margin: '10px' });
-                else if (float == 'right') $(el).css({ float: 'right', margin: '10px' });
+
+                // @tanraya AddedClasses
+                $(el).removeClass('img_left').removeClass('img_right')
+
+                if (float == 'left')
+                  $(el).addClass('img_left');
+                else if (float == 'right')
+                  $(el).addClass('img_right')
             }
             else $(el).css({ float: 'none', margin: '0' });
 
@@ -1043,23 +1048,16 @@ function detectAndroidWebKit()
                 this.execCommand('inserthtml', '<span id="span' + this.spanid + '"></span>');
             }
 
-            var handler = function()
-            {
-            
-            	if (this.opts.paths.images.list !== false)
-            	{
+            var handler = function() {
+            	if (this.opts.paths.images.list !== false) {
 					$.getJSON(this.opts.paths.images.list, function(data) {
-						  $.each(data, function(key, val)
-						  {
+						  $.each(data, function(key, val) {
 						  		var img = $('<img src="' + val.thumb + '" rel="' + val.image + '">');
 						  		img.click(function() { redactorActive.imageSetThumb($(this).attr('rel')); });
-						  		
 								$('#redactor_image_box').append(img);
 						  });
 					});    
-				}    
-				else
-				{
+				} else {
 					$('#redactor_tabs li').eq(0).remove();
 					$('#redactor_tabs a').eq(1).addClass('redactor_tabs_act');
 					$('#redactor_tabs1').hide();
@@ -1070,26 +1068,21 @@ function detectAndroidWebKit()
                 var params = '';
                 if (this.opts.imageUploadCallback) var params = this.opts.imageUploadCallback();
 
-                
-                $('#redactor_file').dragupload(
-                { 
-                	url: this.opts.paths.images.upload + params, 
-                	success: function(data)
-	                {
+                $('#redactor_file').dragupload({ 
+                	url     : this.opts.paths.images.upload + params, 
+                	success : function(data) {
 		                this.imageUploadCallback(data);
-		                
                 	}.bind2(this)
                 });
   
-                this.uploadInit('redactor_file', { auto: true, url: this.opts.paths.images.upload + params, trigger: 'redactorUploadBtn', success: function(data) {
-                
-                    this.imageUploadCallback(data);
-                    
-                }.bind2(this)  });                            
-           
-
-            }.bind2(this);            
-            
+                this.uploadInit('redactor_file', {
+	                auto    : true,
+	                url     : this.opts.paths.images.upload + params,
+	                trigger : 'redactorUploadBtn',
+	                success : function(data) {
+                       this.imageUploadCallback(data);
+                }.bind2(this)});
+            }.bind2(this);
         
             redactorActive = this;
             this.modalInit(RLANG.image, this.opts.paths.dialogs.image, 570, 450, handler);
@@ -1857,8 +1850,8 @@ F["d/home/tanraya/sandbox/imperavi-rails/app/assets/javascripts/imperavi-rails/
 F[{I"	path;
 F"d/home/tanraya/sandbox/imperavi-rails/app/assets/javascripts/imperavi-rails/imperavi/redactor.jsI"
 mtime;
-FIu:	TimeI€)Ž†Ä
+FIu:	TimeK€ ]¡L
 :@_zoneI"	YEKT;
-T:nano_numi&:nano_deni:submicro")@:offseti`TI"hexdigest;
-F"%3710c868b3f9dfc95bb2cd062fc74a8aI"_version;
+T:nano_numi¹:nano_deni:submicro"ip:offseti`TI"hexdigest;
+F"%7fd555899cfef7b736f6a064d90b58f9I"_version;
 F"%46dde6621c301f4928e3b34efee9e3b5

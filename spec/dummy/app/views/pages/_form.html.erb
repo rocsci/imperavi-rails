@@ -1,3 +1,7 @@
+<style>
+textarea { width: 700px; }
+</style>
+
 <%= form_for(@page) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
@@ -26,4 +30,11 @@
 
 <%= include_imperavi_stylesheet %>
 <%= include_imperavi_javascript %>
-<%= imperavi :page_article %>
+<%= imperavi :page_article,
+  :paths => {
+    :images => {
+      :upload => main_app.page_images_path(@page),
+      :list   => main_app.page_images_path(@page, :format => :json)
+    }
+  }
+%>

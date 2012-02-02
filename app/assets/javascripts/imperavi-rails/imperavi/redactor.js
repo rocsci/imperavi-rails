@@ -1009,9 +1009,14 @@ function detectAndroidWebKit()
             if ($('#redactor_form_image_align') != 0)
             {
                 var float = $('#redactor_form_image_align').val();
-                
-                if (float == 'left') $(el).css({ float: 'left', margin: '10px' });
-                else if (float == 'right') $(el).css({ float: 'right', margin: '10px' });
+
+                // @tanraya AddedClasses
+                $(el).removeClass('img_left').removeClass('img_right')
+
+                if (float == 'left')
+                  $(el).addClass('img_left');
+                else if (float == 'right')
+                  $(el).addClass('img_right')
             }
             else $(el).css({ float: 'none', margin: '0' });
 
@@ -1030,23 +1035,16 @@ function detectAndroidWebKit()
                 this.execCommand('inserthtml', '<span id="span' + this.spanid + '"></span>');
             }
 
-            var handler = function()
-            {
-            
-            	if (this.opts.paths.images.list !== false)
-            	{
+            var handler = function() {
+            	if (this.opts.paths.images.list !== false) {
 					$.getJSON(this.opts.paths.images.list, function(data) {
-						  $.each(data, function(key, val)
-						  {
+						  $.each(data, function(key, val) {
 						  		var img = $('<img src="' + val.thumb + '" rel="' + val.image + '">');
 						  		img.click(function() { redactorActive.imageSetThumb($(this).attr('rel')); });
-						  		
 								$('#redactor_image_box').append(img);
 						  });
 					});    
-				}    
-				else
-				{
+				} else {
 					$('#redactor_tabs li').eq(0).remove();
 					$('#redactor_tabs a').eq(1).addClass('redactor_tabs_act');
 					$('#redactor_tabs1').hide();
@@ -1057,26 +1055,21 @@ function detectAndroidWebKit()
                 var params = '';
                 if (this.opts.imageUploadCallback) var params = this.opts.imageUploadCallback();
 
-                
-                $('#redactor_file').dragupload(
-                { 
-                	url: this.opts.paths.images.upload + params, 
-                	success: function(data)
-	                {
+                $('#redactor_file').dragupload({ 
+                	url     : this.opts.paths.images.upload + params, 
+                	success : function(data) {
 		                this.imageUploadCallback(data);
-		                
                 	}.bind2(this)
                 });
   
-                this.uploadInit('redactor_file', { auto: true, url: this.opts.paths.images.upload + params, trigger: 'redactorUploadBtn', success: function(data) {
-                
-                    this.imageUploadCallback(data);
-                    
-                }.bind2(this)  });                            
-           
-
-            }.bind2(this);            
-            
+                this.uploadInit('redactor_file', {
+	                auto    : true,
+	                url     : this.opts.paths.images.upload + params,
+	                trigger : 'redactorUploadBtn',
+	                success : function(data) {
+                       this.imageUploadCallback(data);
+                }.bind2(this)});
+            }.bind2(this);
         
             redactorActive = this;
             this.modalInit(RLANG.image, this.opts.paths.dialogs.image, 570, 450, handler);

@@ -29,7 +29,7 @@ module ImperaviRails
     end
 
     def imperavi_options(options)
-      options.merge!(imperavi_default_options)
+      imperavi_default_options.deep_merge!(options)
     end
 
     def imperavi_default_options

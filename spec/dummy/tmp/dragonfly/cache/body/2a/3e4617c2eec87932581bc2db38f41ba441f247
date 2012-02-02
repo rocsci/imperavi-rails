@@ -1,0 +1,260 @@
+/* line 1, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+body {
+  font-family: "Trebuchet MS", Verdana, Arial, Tahoma, sans-serif;
+  font-size: 90%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #f8f8f8;
+}
+
+/* line 10, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+blockquote {
+  margin: 10px;
+  margin-left: 3em;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  line-height: 1.5em;
+  font-style: italic;
+  color: #777;
+}
+
+/* line 20, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+div {
+  line-height: 1.5em;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* line 27, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+p {
+  margin: 10px;
+  line-height: 1.5em;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  overflow: hidden;
+}
+/* line 35, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+p img {
+  margin: 10px;
+}
+/* line 39, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+p .img_left {
+  float: left;
+  margin: 0 10px 0 0;
+}
+/* line 44, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+p .img_right {
+  float: right;
+  margin: 0 0 0 10px;
+}
+
+/* line 49, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+ul, ol {
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  line-height: 1.5em;
+  margin: 10px;
+  padding-left: 2em;
+}
+
+/* line 57, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+ul li ul, ol li ol, ul li ol, ol li ul {
+  border: none;
+  margin: 2px !important;
+  padding: 0;
+  padding-left: 2em;
+}
+
+/* line 63, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+dl {
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* line 69, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+dl dt {
+  font-weight: bold;
+}
+
+/* line 70, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+dd {
+  margin-left: 1.5em;
+}
+
+/* line 72, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+table {
+  background-color: #fff;
+  border-collapse: collapse;
+  font-size: 1em;
+  margin: 10px;
+}
+
+/* line 78, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+table td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* line 82, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+table thead td {
+  border-bottom: 2px solid #000 !important;
+  font-weight: bold;
+}
+
+/* line 86, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+code, pre {
+  font: 1.2em/1 "Courier New", Courier, monospace;
+  border: 1px dashed #ccc;
+  background: #f5f5f5;
+  padding: 1em;
+  margin: 10px;
+}
+
+/* line 87, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+pre {
+  line-height: 1.7em;
+  font-size: .9em;
+  background: #f5f5f5;
+  overflow: auto;
+}
+
+/* line 89, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+iframe, object {
+  margin: 10px;
+}
+
+/* line 93, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_video_box {
+  width: 300px;
+  height: 200px;
+  background: url(../i/video_box.png) center no-repeat black !important;
+  margin: 10px;
+}
+
+/* line 99, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_video_box object, .redactor_video_box embed, .redactor_video_box iframe {
+  display: none;
+}
+
+/* line 103, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_link {
+  padding-left: 20px;
+}
+
+/* line 106, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_avi {
+  background: url(../i/fileicons/avi.png) no-repeat;
+}
+
+/* line 107, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_csv {
+  background: url(../i/fileicons/csv.png) no-repeat;
+}
+
+/* line 108, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_doc {
+  background: url(../i/fileicons/doc.png) no-repeat;
+}
+
+/* line 109, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_gif {
+  background: url(../i/fileicons/gif.png) no-repeat;
+}
+
+/* line 110, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_html {
+  background: url(../i/fileicons/html.png) no-repeat;
+}
+
+/* line 111, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_jpg {
+  background: url(../i/fileicons/jpg.png) no-repeat;
+}
+
+/* line 112, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_mov {
+  background: url(../i/fileicons/mov.png) no-repeat;
+}
+
+/* line 113, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_other {
+  background: url(../i/fileicons/other.png) no-repeat;
+}
+
+/* line 114, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_pdf {
+  background: url(../i/fileicons/pdf.png) no-repeat;
+}
+
+/* line 115, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_png {
+  background: url(../i/fileicons/png.png) no-repeat;
+}
+
+/* line 116, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_ppt {
+  background: url(../i/fileicons/ppt.png) no-repeat;
+}
+
+/* line 117, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_rar {
+  background: url(../i/fileicons/rar.png) no-repeat;
+}
+
+/* line 118, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_rtf {
+  background: url(../i/fileicons/rtf.png) no-repeat;
+}
+
+/* line 119, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_txt {
+  background: url(../i/fileicons/txt.png) no-repeat;
+}
+
+/* line 120, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_xls {
+  background: url(../i/fileicons/xls.png) no-repeat;
+}
+
+/* line 121, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+.redactor_file_ico_zip {
+  background: url(../i/fileicons/zip.png) no-repeat;
+}
+
+/* line 124, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* line 132, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+h1 {
+  font-size: 30px;
+}
+
+/* line 135, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+h2 {
+  font-size: 24px;
+}
+
+/* line 138, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+h3 {
+  font-size: 18px;
+}
+
+/* line 141, /home/tanraya/sandbox/imperavi-rails/app/assets/stylesheets/imperavi-rails/imperavi/wym.css.scss */
+h4 {
+  font-size: 12px;
+  font-weight: bold;
+}
