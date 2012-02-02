@@ -56,6 +56,8 @@ You may want the text on your page to be styled the same way as it looks in the 
       }
     }
 
+## Deal with images: uploading, images list
+
 For details look at the Dummy app sources: https://github.com/tanraya/imperavi-rails/tree/master/spec/dummy
 
 # Contribute
