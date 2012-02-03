@@ -24,7 +24,7 @@ And you're done!
 
 Add this helpers into the your view that contains a form:
 
-```ruby
+```erb
     <%= include_imperavi_stylesheet %>
     <%= include_imperavi_javascript %>
     <%= imperavi :page_article %>
