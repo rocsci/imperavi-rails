@@ -7,6 +7,19 @@ div.imperavi {
     margin: 0;
   }
 
+  div.imperavi-resizer, div.imperavi-resizer div {
+    cursor: s-resize;
+    height: 8px !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    background: asset-url("imperavi_rails/imperavi/bg.png", image) repeat-x !important; 
+
+    div {
+      border-top: 1px solid #d7d6d6 !important;
+      background: asset-url("imperavi_rails/imperavi/resizer.gif", image) center no-repeat !important;
+    }
+  }
+
   ul {
     position: relative;
     list-style: none;
