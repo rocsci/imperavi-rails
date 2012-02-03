@@ -25,9 +25,9 @@ And you're done!
 Add this helpers into the your view that contains a form:
 
 ```erb
-    <%= include_imperavi_stylesheet %>
-    <%= include_imperavi_javascript %>
-    <%= imperavi :page_article %>
+<%= include_imperavi_stylesheet %>
+<%= include_imperavi_javascript %>
+<%= imperavi :page_article %>
 ```
 
 In this example `page_article` is an id of textarea field. You can pass additional options to `imperavi` helper as second argument. See the full list of options here: https://github.com/tanraya/imperavi-rails/blob/master/app/helpers/imperavi_rails/imperavi_helper.rb#L35
@@ -35,33 +35,33 @@ In this example `page_article` is an id of textarea field. You can pass addition
 You may want the text on your page to be styled the same way as it looks in the editor. To do this, add the following styles into your `application.css.scss` (provided that the text on the page is enclosed with `article` tag):
 
 ```scss
-    @import "imperavi-rails/imperavi/imperavi-base";
+@import "imperavi-rails/imperavi/imperavi-base";
 
-    body {
-      width: 700px;
-      margin: 0 auto;
+body {
+  width: 700px;
+  margin: 0 auto;
 
-      article {
-        overflow: hidden;
-        @include imperavi-base;
+  article {
+    overflow: hidden;
+    @include imperavi-base;
 
-        p, div {
-          border: 0;
-        }
-
-        p {
-          padding: 0;
-          margin: 0 0 1.5em 0;
-        }
-      }
-
-      form {
-        textarea {
-          width: 700px;
-          height: 600px;
-        }
-      }
+    p, div {
+      border: 0;
     }
+
+    p {
+      padding: 0;
+      margin: 0 0 1.5em 0;
+    }
+  }
+
+  form {
+    textarea {
+      width: 700px;
+      height: 600px;
+    }
+  }
+}
 ```
 
 ## Deal with images
