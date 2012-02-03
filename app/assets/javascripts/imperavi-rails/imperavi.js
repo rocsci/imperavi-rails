@@ -1,5 +1,5 @@
-//= require ./imperavi/linkify
-//= require ./imperavi/textselect
-//= require ./imperavi/dd_upload
+//= require ./imperavi/imperavi-overlay
+//= require ./imperavi/imperavi-iframe
+//= require ./imperavi/imperavi-iframe-resizer
+//= require ./imperavi/imperavi-toolbar
 //= require ./imperavi/editor
-// require ./imperavi/redactor

@@ -30,11 +30,9 @@ textarea { width: 700px; }
 
 <%= include_imperavi_stylesheet %>
 <%= include_imperavi_javascript %>
-<%= imperavi :page_article,
-  :paths => {
-    :images => {
-      :upload => images_path,
-      :list   => images_path(:format => :json)
-    }
-  }
-%>
+
+<script>
+$(document).ready(function() {
+  $('#page_article').imperavi()
+});
+</script>
