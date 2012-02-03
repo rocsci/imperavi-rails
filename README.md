@@ -82,3 +82,7 @@ I would appreciate any participation in the project. Any additions, fixes and id
 * Create a topic branch for your changes
 * Ensure that the changes in your branch are as atomic as possible
 * Create a pull request on Github
+
+# TODO
+
+* [Read TODO here](https://github.com/tanraya/imperavi-rails/blob/master/TODO.md)
