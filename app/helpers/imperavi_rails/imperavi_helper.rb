@@ -7,7 +7,7 @@ module ImperaviRails
     end
 
     def imperavi_javascript_path(source)
-      javascript_path("imperavi-rails/imperavi/#{source}")
+      javascript_path("imperavi-rails/#{source}")
     end
 
     def include_imperavi_stylesheet
@@ -15,7 +15,7 @@ module ImperaviRails
     end
 
     def include_imperavi_javascript
-      javascript_include_tag imperavi_javascript_path('redactor')
+      javascript_include_tag imperavi_javascript_path('imperavi')
     end
 
     def imperavi(element, options = {}, wrap = true)

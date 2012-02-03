@@ -24,39 +24,29 @@ var deviceAndroid = "android";
 var uagent = navigator.userAgent.toLowerCase();
 
 // detect iOS and Android
-function isiOS()
-{
+function isiOS() {
     return ((navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1) || (navigator.platform.indexOf("iPad") != -1));
 }
 
-function detectAndroid()
-{
-   if (uagent.search(deviceAndroid) > -1) return true;
-   else return false;
+function detectAndroid() {
+   return uagent.search(deviceAndroid) > -1
 }
 
-function detectAndroidWebKit()
-{
-   if (detectAndroid())
-   {
-		if (uagent.search('webkit') > -1) return true;
-		else return false;
+function detectAndroidWebKit() {
+   if (detectAndroid()) {
+		return uagent.search('webkit') > -1
    }
-   else return false;
+
+   return false;
 }
 
 // redactor 
 (function($){
-
 	// Initialization	
-	$.fn.redactor = function(options)
-	{				
+	$.fn.redactor = function(options) {				
 		if (isiOS() || detectAndroid() || detectAndroidWebKit()) return false;
-
 		var obj = new Construct(this, options);	
-		
 		obj.init();
-		
 		return obj;
 	};
 	
@@ -126,9 +116,7 @@ function detectAndroidWebKit()
 
 	// Functionality
 	Construct.prototype = {
-	
-		init: function()
-		{
+		init: function() {
 			if (this.opts.air) this.opts.toolbar = 'air';
 			
 			// include lang and toolbar
@@ -136,13 +124,11 @@ function detectAndroidWebKit()
 					
 			// sizes and id
 	   		this.frameID = this.$el.attr('id');
-	   		this.width = this.$el.css('width');
-	   		this.height = this.$el.css('height'); 
-	   		  		
+	   		this.width   = this.$el.css('width');
+	   		this.height  = this.$el.css('height'); 
 	   		
 	   		// modal overlay
-	   		if ($('#redactor_imp_modal_overlay').size() == 0)
-	   		{
+	   		if ($('#redactor_imp_modal_overlay').size() == 0) {
 		   		this.overlay = $('<div id="redactor_imp_modal_overlay" style="display: none;"></div>');
 		   		$('body').prepend(this.overlay);
 		   	}
@@ -151,8 +137,7 @@ function detectAndroidWebKit()
 			this.box = $('<div id="imp_redactor_box_' + this.frameID + '" style="width: ' + this.width + ';" class="imp_redactor_box imp_redactor_box"></div>');
 		
 			// air box
-			if (this.opts.air)
-			{
+			if (this.opts.air) {
 				this.air = $('<div id="imp_redactor_air_' + this.frameID + '" class="redactor_air" style="display: none;"></div>');
 			}
 
@@ -168,12 +153,11 @@ function detectAndroidWebKit()
  			if (this.opts.toolbar !== false) this.buildToolbar();
 
 			// resizer
-			if (this.opts.resize)
-			{
+			if (this.opts.resize) {
 				this.resizer = $('<div id="imp_redactor_resize' + this.frameID + '" class="imp_redactor_resize"><div></div></div>');
 				$(this.box).append(this.resizer);
 	
-	           $(this.resizer).mousedown(function(e) { this.initResize(e) }.bind2(this));
+	            $(this.resizer).mousedown(function(e) { this.initResize(e) }.bind2(this));
 			}
 			
 			// enable	
@@ -181,10 +165,8 @@ function detectAndroidWebKit()
 
 			$(this.doc).click(function() { this.hideAllDropDown() }.bind2(this));
 			
-			if (this.opts.autoclear)
-			{
-				$(this.doc).bind('paste', function(e)
-				{ 
+			if (this.opts.autoclear) {
+				$(this.doc).bind('paste', function(e) {
 					 setTimeout(function () { this.clean(); }.bind2(this), 200);
 				}.bind2(this));
 			}
@@ -193,40 +175,30 @@ function detectAndroidWebKit()
 			this.enableAir();
 
 			// doc events
-			$(this.doc).keydown(function(e)
-		    {
+			$(this.doc).keydown(function(e) {
 		        if (e.ctrlKey || e.metaKey) isCtrl = true;
-		                
 		        if (e.keyCode == 9) { this.execCommand('indent', false); return false; }
 		        if (e.keyCode == 66 && isCtrl) { this.execCommand('bold', 'bold'); return false; }
 		        if (e.keyCode == 73 && isCtrl) { this.execCommand('italic', 'italic'); return false; }			        
 		        
-		    }.bind2(this)).keyup(function(e)
-		    {
+		    }.bind2(this)).keyup(function(e) {
 				isCtrl = false;		
 				
-		        if (e.keyCode == 13)
-		        {
+		        if (e.keyCode == 13) {
 			        $(this.doc).linkify();
 			        return true;
 		        }				
 					        
-				this.syncCode();	
-					        	        
+				this.syncCode();
 		    }.bind2(this));
-
 			
 			// autosave	
-			if (this.opts.autosave)	
-			{	
-				setInterval(function()
-				{
+			if (this.opts.autosave)	{
+				setInterval(function() {
 					var html = this.getHtml();
 					$.post(this.opts.autosave, { data: html });
-
 				}.bind2(this), this.opts.interval*1000);
-				
-			}		
+			}
 			
 			this.formSets();	
 
@@ -237,64 +209,57 @@ function detectAndroidWebKit()
 		/* 	
 			API 
 		*/
-		setHtml: function(html)
-		{
+		setHtml: function(html) {
 			this.doc.body.innerHTML = html;			
 			this.docObserve();
 		},
-		getHtml: function()
-		{
+
+		getHtml: function() {
 			return this.doc.body.innerHTML;
 		},
-		getCode: function(clear)
-		{
+
+		getCode: function(clear) {
 			return this.$el.val();
-		},			
-		focus: function()
-		{
+		},
+
+		focus: function() {
 			if ($.browser.msie) $(this.frame).load(function() { $(this).get(0).contentWindow.focus(); });
 			else this.frame.get(0).contentWindow.focus();
-		},	
-		typo: function()
-		{
+		},
+
+		typo: function() {
 			var html = this.getHtml();
+
 			$.ajax({
-				url: this.opts.paths.typograf,
-				type: 'post',
-				data: 'redactor=' + escape(encodeURIComponent(html)),
-				success: function(data)
-				{
+				url  : this.opts.paths.typograf,
+				type : 'post',
+				data : 'redactor=' + escape(encodeURIComponent(html)),
+				success: function(data) {
 					this.setHtml(data);
 				}.bind2(this)
 			});
-		},	
-		syncCode: function()
-		{
+		},
+
+		syncCode: function() {
 			var html = this.getHtml();
 			
 			html = this.tidyUp(html);
-			
 			html = html.replace(/\%7B/gi, '{');
 			html = html.replace(/\%7D/gi, '}');
-	
 			html = html.replace(/<hr class="redactor_cut">/gi, '<!--more-->');
 			html = html.replace(/<hr class=redactor_cut>/gi, '<!--more-->');
-	
 			this.$el.val(html);
 		},
-		destroy: function()
-		{
+
+		destroy: function() {
 			var html = this.getCode();
 			$(this.box).after(this.$el)
 			this.box.remove();
 			this.$el.val(html).show();
 		},
 		
-		/*
-			Include
-		*/
-		include: function()
-		{
+		// Include
+		include: function() {
 			// lang
 			$('head').append(
 				$('<script src="' + this.opts.paths.language + '"></script>')
@@ -307,68 +272,55 @@ function detectAndroidWebKit()
 			}
 		},
 		
-		/* 	
-			Enable 
-		*/	
-		enable: function(html)
-		{				
+		// Enable 
+		enable: function(html) {
 	   		this.doc = this.contentDocumentFrame(this.frame);
 	   		
 			// flash replace
 			html = html.replace(/\<object([\w\W]*?)\<\/object\>/gi, '<p class="redactor_video_box"><object$1</object></p>');	   		
 	   		
-	   		if (html == '')
-	   		{
-	   			if (this.opts.autoformat === true) 
-	   			{
-	   				if ($.browser.msie) html = "<p></p>";
-		   			else html = "<p>&nbsp;</p>";
+	   		if (html == '') {
+	   			if (this.opts.autoformat === true) {
+	   				html = $.browser.msie ? "<p></p>" : "<p>&nbsp;</p>";
 		   		}
 	   		}
 	   		
 			this.redactorWrite(this.getRedactorDoc(html));
-			
 			if (this.opts.clearOnInit) this.clean();
-					
-			
 			this.designMode();		
 		},
-		enableAir: function()
-		{
-			if (this.opts.air)
-			{	
+
+		enableAir: function() {
+			if (this.opts.air) {
 				$('#imp_redactor_air_' + this.frameID).hide();
 				
-				$(this.doc).bind('textselect', this.frameID, function(e)
-				{
+				$(this.doc).bind('textselect', this.frameID, function(e) {
 					var width = $('#imp_redactor_air_' + this.frameID).width();
 					var width_area = $(this.frame).width();
-					
 					var diff = width_area - e.clientX;
+
 					if (diff < width) e.clientX = e.clientX - width;
 					
 					$('#imp_redactor_air_' + this.frameID).css({ left: e.clientX + 'px', top: (e.clientY + 8) + 'px' }).show();
 					
 				}.bind2(this));
 				
-				$(this.doc).bind('textunselect', this.frameID, function()
-				{
+				$(this.doc).bind('textunselect', this.frameID, function() {
 					$('#imp_redactor_air_' + this.frameID).hide();
-					
 				}.bind2(this)); 			
 			}		
 		},
-		redactorWrite: function(html)
-		{
+
+		redactorWrite: function(html) {
 			this.doc.open();
 			this.doc.write(html);
 			this.doc.close();		
 		},
-		getRedactorDoc: function(html)
-		{		
+
+		getRedactorDoc: function(html) {		
 			css = '';
-			for (stylesheet in this.opts.paths.stylesheets)
-			{
+
+			for (stylesheet in this.opts.paths.stylesheets) {
 				css += '<link media="all" href="' + this.opts.paths.stylesheets[stylesheet] + '" rel="stylesheet">';
 			}
 
@@ -376,10 +328,11 @@ function detectAndroidWebKit()
 			frameHtml += '<html><head>' + css + '</head><body>';
 			frameHtml += html;
 			frameHtml += '</body></html>';
+
 			return frameHtml;
-		},	
-		contentDocumentFrame: function(frame)
-		{	
+		},
+
+		contentDocumentFrame: function(frame) {	
 			frame = frame.get(0);
 	
 			if (frame.contentDocument) return frame.contentDocument;
@@ -387,34 +340,28 @@ function detectAndroidWebKit()
 			else if (frame.document) return frame.document;
 			else return null;
 		},
-		designMode: function()
-		{
-			if (this.doc)
-			{
+
+		designMode: function() {
+			if (this.doc) {
 				this.doc.designMode = 'on';
-				this.frame.load(function()
-				{ 				
+				this.frame.load(function() {
 					this.enableObjects();
 					this.docObserve();			
 	   				this.doc.designMode = 'on'; 
 	   			}.bind2(this));
 			}
 		},
-		enableObjects: function()
-		{
-	   		if ($.browser.mozilla)
-   			{
+
+		enableObjects: function() {
+	   		if ($.browser.mozilla) {
 				this.doc.execCommand("enableObjectResizing", false, "false");
 				this.doc.execCommand("enableInlineTableEditing", false, "false");	   						
 			}		
 		},
 		
 	
-		/*
-			Observers
-		*/		
-		docObserve: function()
-		{
+		// Observers
+		docObserve: function() {
 			var body = $(this.doc).find('body');
 			
 			body.find('img').click(function(e) { this.imageEdit(e); }.bind2(this));
@@ -423,38 +370,26 @@ function detectAndroidWebKit()
 
 		},		
 				
-		/*
-			Format on submit form 
-		*/
-		formSets: function()
-		{
-			var oldOnsubmit = null;		
-	
-			var theForm = $(this.box).parents('form');
+		// Format on submit form 
+		formSets: function() {
+			var oldOnsubmit = null;
+			var theForm     = $(this.box).parents('form');
+
 			if (theForm.length == 0) return false;
 	
 			oldOnsubmit = theForm.get(0).onsubmit;
 	
-			if (typeof theForm.get(0).onsubmit != "function")
-			{
-				theForm.get(0).onsubmit = function()
-				{
-	          		if (this.opts.visual)
-					{
+			if (typeof theForm.get(0).onsubmit != "function") {
+				theForm.get(0).onsubmit = function() {
+	          		if (this.opts.visual) {
 						this.syncCode();
-						
 						return true;
 					}
 				}.bind2(this)
-			}
-			else
-			{
-				theForm.get(0).onsubmit = function()
-				{
-	            	if (this.opts.visual)
-					{
+			} else {
+				theForm.get(0).onsubmit = function() {
+	            	if (this.opts.visual) {
 						this.syncCode();
-	
 						return oldOnsubmit();
 					}
 				}.bind2(this)
@@ -463,40 +398,29 @@ function detectAndroidWebKit()
 			return true;
 		},			
 		
-		/*
-			Exec
-		*/		
-		execCommand: function(cmd, param)
-		{		
-			if (this.opts.visual && this.doc)
-			{
-    			try
-	    		{
+		// Exec		
+		execCommand: function(cmd, param) {
+			if (this.opts.visual && this.doc) {
+    			try {
     				this.frame.get(0).contentWindow.focus();
 					
-	    			if (cmd == 'inserthtml' && $.browser.msie) this.doc.selection.createRange().pasteHTML(param);
-	    			else   			
-					{											
+	    			if (cmd == 'inserthtml' && $.browser.msie) {
+	    			  this.doc.selection.createRange().pasteHTML(param);
+	    			} else {
 						this.doc.execCommand(cmd, false, param);
-						
-						if (param == "blockquote" || param == 'pre') this.doc.body.appendChild(this.doc.createElement("BR"));
+
+						if (param == "blockquote" || param == 'pre')
+							this.doc.body.appendChild(this.doc.createElement("BR"));
 					}
-				}
-				catch (e) { }
+				} catch (e) { }
 				
 				this.syncCode();	
-				
-				if (this.opts.air) $('#imp_redactor_air_' + this.frameID).hide();		
-
+				if (this.opts.air) $('#imp_redactor_air_' + this.frameID).hide();
 			}
 		},						
 		
-		/*
-			Format and clean
-		*/	
-		
-		clean: function()
-		{
+		// Format and clean
+		clean: function() {
 			var html = this.getHtml();
 
 			if ($.browser.mozilla) html = this.convertSpan(html);			
@@ -510,14 +434,12 @@ function detectAndroidWebKit()
 			html = this.tidyUp(html);	
 			
 			this.setHtml(html);
-			
 			this.paragraphise();
 			
 			return html;
 		},
 		
-		tidyUp: function (html)
-		{
+		tidyUp: function (html) {
 			// lowercase
 			if ($.browser.msie) 
 			{
@@ -1649,185 +1571,3 @@ function showRedactorTabs(el, index)
 	$('.redactor_tabs').hide();
 	$('#redactor_tabs' + index).show();
 }
-
-
-// Define: Linkify plugin from stackoverflow
-(function($){
-     var url2 = /(^|&lt;|\s)(((https?|ftp):\/\/|mailto:).+?)(\s|&gt;|$)/g;
-
-      linkifyThis = function () 
-      {
-			var childNodes = this.childNodes,
-			i = childNodes.length;
-			while(i--)
-			{
-				var n = childNodes[i];
-				if (n.nodeType == 3) 
-				{
-					var html = n.nodeValue;
-					if (html)
-					{
-						html = html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(url2, '$1<a href="$2">$2</a>$5');
-						$(n).after(html).remove();
-					}
-				}
-				else if (n.nodeType == 1  &&  !/^(a|button|textarea)$/i.test(n.tagName)) linkifyThis.call(n);
-			}
-      };
-	
-	$.fn.linkify = function () 
-	{
-		this.each(linkifyThis);
-	};
-
-})(jQuery);
-
-
-/* jQuery plugin textselect
- * version: 0.9
- * author: Josef Moravec, josef.moravec@gmail.com
- * updated: Imperavi 
- * 
- */
-(function($){$.event.special.textselect={setup:function(data,namespaces)
-{$(this).data("textselected",false);$(this).data("ttt",data);$(this).bind('mouseup',$.event.special.textselect.handler);},teardown:function(data)
-{$(this).unbind('mouseup',$.event.special.textselect.handler);},handler:function(event)
-{var data=$(this).data("ttt");var text=$.event.special.textselect.getSelectedText(data).toString();if(text!='')
-{$(this).data("textselected",true);event.type="textselect";event.text=text;$.event.handle.apply(this,arguments);}},getSelectedText:function(data)
-{var text='';var frame=$('#imp_redactor_frame_'+data).get(0);if(frame.contentWindow.getSelection)text=frame.contentWindow.getSelection();else if(frame.contentWindow.document.getSelection) text=frame.contentWindow.document.getSelection();else if(frame.contentWindow.document.selection)text=frame.contentWindow.document.selection.createRange().text;return text;}}
-$.event.special.textunselect={setup:function(data,namespaces){$(this).data("rttt",data);$(this).data("textselected",false);$(this).bind('mouseup',$.event.special.textunselect.handler);$(this).bind('keyup',$.event.special.textunselect.handlerKey)},teardown:function(data){$(this).unbind('mouseup',$.event.special.textunselect.handler);},handler:function(event){if($(this).data("textselected")){var data=$(this).data("rttt");var text=$.event.special.textselect.getSelectedText(data).toString();if(text==''){$(this).data("textselected",false);event.type="textunselect";$.event.handle.apply(this,arguments);}}},handlerKey:function(event){if($(this).data("textselected")){var data=$(this).data("rttt");var text=$.event.special.textselect.getSelectedText(data).toString();if((event.keyCode=27)&&(text=='')){$(this).data("textselected",false);event.type="textunselect";$.event.handle.apply(this,arguments);}}}}})(jQuery);
-
-
-/*
-	Plugin Drag and drop Upload v1.0.0
-	http://imperavi.com/ 
-	Copyright 2011, Imperavi Ltd.
-*/
-(function($){
-	
-	// Initialization	
-	$.fn.dragupload = function(options)
-	{		
-		return this.each(function() {
-			var obj = new Construct(this, options);
-			obj.init();
-		});
-	};
-	
-	// Options and variables	
-	function Construct(el, options) {
-
-		this.opts = $.extend({
-		
-			url: false,
-			success: false,
-			maxfilesize: 10485760, // 10MB
-			preview: false,
-			
-			text: RLANG.drop_file_here,
-			atext: RLANG.or_choose
-
-/*
-			success_text: 'Загрузка успешно завершена',
-			progress_text: 'Загрузка',
-			maxsize_error: 'Файл слишком большой'
-*/
-
-			
-		}, options);
-		
-		this.$el = $(el);
-	};
-
-	// Functionality
-	Construct.prototype = {
-		init: function()
-		{	
-			if (!$.browser.opera && !$.browser.msie) 
-			{	
-				this.droparea = $('<div class="redactor_droparea"></div>');
-				this.dropareabox = $('<div class="redactor_dropareabox">' + this.opts.text + '</div>');	
-				this.dropalternative = $('<div class="redactor_dropalternative">' + this.opts.atext + '</div>');
-				
-				this.droparea.append(this.dropareabox);	
-				
-				this.$el.before(this.droparea);	
-				this.$el.before(this.dropalternative);	
-				
-				
-				// drag over
-				this.dropareabox.bind('dragover', function() { return this.ondrag(); }.bind2(this));
-				
-				// drag leave
-				this.dropareabox.bind('dragleave', function() { return this.ondragleave(); }.bind2(this));	
-				
-				
-				// drop
-			    this.dropareabox.get(0).ondrop = function(event) {
-			        
-			        event.preventDefault();
-			        
-			        this.dropareabox.removeClass('hover').addClass('drop');
-			        
-			        var file = event.dataTransfer.files[0];
-			        
-
-/*
-			        if (file.size > this.opts.maxfilesize) 
-			        {
-			            this.dropareabox.text(this.opts.maxsize_error).addClass('error');
-			            return false;
-			        }
-
-			        var uploadProgress = function(e) 
-			        { 
-						var percent = parseInt(e.loaded / e.total * 100);
-						this.dropareabox.text(this.opts.progress_text + ': ' + percent + '%');
-						
-			        }.bind2(this);
-
-	
-				   	var xhr = jQuery.ajaxSettings.xhr();
-				    if (xhr.upload) xhr.upload.addEventListener('progress', uploadProgress, false);
-				    var provider = function () { return xhr; };  
-*/
-	
-			  		var fd = new FormData();		        
-	 				fd.append('file', file); 
-	 				
-					$.ajax({
-					    url: this.opts.url,
-					    data: fd,
-					    //xhr: provider,
-					    cache: false,
-					    contentType: false,
-					    processData: false,
-					    type: 'POST',
-					    success: function(data)
-					    {
-					    	if (this.opts.success !== false) this.opts.success(data);
-
-					    	if (this.opts.preview === true) this.dropareabox.html(data);
-					    	//else this.dropareabox.text(this.opts.success_text);
-					    
-					    }.bind2(this)
-					});		   
-			        
-			  
-			    }.bind2(this);				
-			}
-		},
-		ondrag: function()
-		{
-			this.dropareabox.addClass('hover');
-			return false;
-		},
-		ondragleave: function()
-		{
-			this.dropareabox.removeClass('hover'); 
-			return false;
-		}
-	};
-
-	
-})(jQuery);
