@@ -8,11 +8,15 @@ I created this mountable engine with Imperavi so now you can easily integrate th
 
 Put this line into your Gemfile:
 
-    gem 'imperavi-rails'
+```ruby
+gem 'imperavi-rails'
+```
 
 Then mount the engine in routes.rb:
 
-    mount ImperaviRails::Engine => "/imperavi"
+```ruby
+mount ImperaviRails::Engine => "/imperavi"
+```
 
 And you're done!
 
@@ -20,14 +24,17 @@ And you're done!
 
 Add this helpers into the your view that contains a form:
 
+```ruby
     <%= include_imperavi_stylesheet %>
     <%= include_imperavi_javascript %>
     <%= imperavi :page_article %>
+```
 
 In this example `page_article` is an id of textarea field. You can pass additional options to `imperavi` helper as second argument. See the full list of options here: https://github.com/tanraya/imperavi-rails/blob/master/app/helpers/imperavi_rails/imperavi_helper.rb#L35
 
 You may want the text on your page to be styled the same way as it looks in the editor. To do this, add the following styles into your `application.css.scss` (provided that the text on the page is enclosed with `article` tag):
 
+```scss
     @import "imperavi-rails/imperavi/imperavi-base";
 
     body {
@@ -55,10 +62,15 @@ You may want the text on your page to be styled the same way as it looks in the 
         }
       }
     }
+```
 
-## Deal with images: uploading, images list
+## Deal with images
 
-For details look at the Dummy app sources: https://github.com/tanraya/imperavi-rails/tree/master/spec/dummy
+Uploading images is not part of the imperavi-rails. You have to implement this functionality in your application yourself. It's easy. Read the docs below.
+
+* [How to upload images with imperavi-rails](https://github.com/tanraya/imperavi-rails/wiki/How-to-upload-images-with-imperavi-rails)
+
+Also you can see Dummy app that has working images uploading: https://github.com/tanraya/imperavi-rails/tree/master/spec/dummy
 
 # Contribute
 
