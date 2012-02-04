@@ -5,6 +5,7 @@
 
 //= require ./imperavi/imperavi-plugin-video
 
+//= require ./imperavi/imperavi-dialog
 //= require ./imperavi/imperavi-overlay
 //= require ./imperavi/imperavi-iframe
 //= require ./imperavi/imperavi-iframe-resizer

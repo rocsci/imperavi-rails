@@ -1,10 +1,11 @@
 (function( $ ) {
   $.fn.imperavi = function(options) {
-    // Create some defaults, extending them with any options that were provided
+    // Editor options
     var o = $.extend({
-      language  : 'ru',
+      language  : 'ru', // TODO replace with $.fn.ImperaviLanguage
       resizer   : $.fn.ImperaviIframeResizer,
-      overlay   : $.fn.ImperaviOverlay,
+      dialog    : $.fn.ImperaviDialog,
+      //overlay   : $.fn.ImperaviOverlay,
       iframe    : $.fn.ImperaviIframe,
       toolbar   : $.fn.ImperaviToolbar,
       delegator : $.fn.ImperaviActionDelegator
@@ -17,7 +18,7 @@
       textarea  : null,
       iframe    : null,
       toolbar   : null,
-      overlay   : null,
+      //overlay   : null,
       resizer   : null,
       delegator : null,
 
@@ -33,7 +34,12 @@
          this.delegator = new o.delegator
 
          // Create overlay
-         this.overlay = new o.overlay(o)
+         //this.overlay = new o.overlay(o)
+         //this.overlay.show()
+
+         // Create dialog
+         this.dialog = new o.dialog(o)
+         this.dialog.show()
 
          // Create iframe
          this.iframe  = new o.iframe(this.textarea, o)

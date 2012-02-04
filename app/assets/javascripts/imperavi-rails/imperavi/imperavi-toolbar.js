@@ -14,8 +14,8 @@
     initialize: function(iframe, o) {
       this.iframe = iframe
       this.o      = o
-      this.x      = $.fn.ImperaviToolbarDefault
-      this.l      = $.fn.ImperaviLanguages.ru
+      this.x      = $.fn.ImperaviToolbarDefault // TODO make it pretty
+      this.l      = $.fn.ImperaviLanguages.ru // TODO make it pretty
 
       this.build()
     },
