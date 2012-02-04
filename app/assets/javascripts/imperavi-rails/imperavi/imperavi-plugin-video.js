@@ -9,7 +9,9 @@
     },
 
     build: function() {
-      alert('video plugin')
+      this.dialog = new $.fn.ImperaviDialog
+      this.dialog.show()
+      //alert('video plugin')
     }
   }
 })(jQuery);

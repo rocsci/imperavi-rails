@@ -37,17 +37,18 @@
     },
 
     addButton: function(name, title, caption) {
-      var li = $(document.createElement('li')).addClass('button-' + name)
-      var a  = $(document.createElement('a'))
+      var li   = $(document.createElement('li')).addClass('button-' + name)
+      var a    = $(document.createElement('a'))
         .attr('href', 'javascript:;')
         .attr('rel', name)
-        .appendTo(li);
-
-        a.attr('title', title)
-        a.html(caption)
-
+        .attr('title', title)
+        .appendTo(li)
         // This executes a custom callback on button click
-        a.click($.proxy(function(){ this.o.onButtonClick.call(this, a) }, this))
+        .click($.proxy(function(){ this.o.onButtonClick.call(this, a) }, this))
+
+      var span = $(document.createElement('span'))
+        .html(caption)
+        .appendTo(a);
 
       return li.append(a)
     },
@@ -55,6 +56,8 @@
     addDropdown: function(name, items) {
       var button = this.addButton(name, this.l[name].name, null)
       var ul     = $(document.createElement('ul'))
+
+      button.addClass('has-dropdown')
 
       // Add dropdown items
       $.each(items, $.proxy(function(key, value) {

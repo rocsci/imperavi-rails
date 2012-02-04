@@ -1,3 +1,9 @@
+// TODO: add custom events
+// - onShow
+// - onClose
+// - onBuilt
+// - onContentLoaded
+
 (function( $ ) {
   $.fn.ImperaviDialog = function(o) { this.initialize(o) }
 

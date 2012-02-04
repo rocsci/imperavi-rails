@@ -4,7 +4,7 @@
     var o = $.extend({
       language  : 'ru', // TODO replace with $.fn.ImperaviLanguage
       resizer   : $.fn.ImperaviIframeResizer,
-      dialog    : $.fn.ImperaviDialog,
+      //dialog    : $.fn.ImperaviDialog,
       //overlay   : $.fn.ImperaviOverlay,
       iframe    : $.fn.ImperaviIframe,
       toolbar   : $.fn.ImperaviToolbar,
@@ -38,8 +38,8 @@
          //this.overlay.show()
 
          // Create dialog
-         this.dialog = new o.dialog(o)
-         this.dialog.show()
+         //this.dialog = new o.dialog(o)
+         //this.dialog.show()
 
          // Create iframe
          this.iframe  = new o.iframe(this.textarea, o)
