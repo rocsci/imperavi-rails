@@ -4,14 +4,20 @@
   $.fn.ImperaviPluginVideo.prototype = {
     initialize: function(o) {
       this.o = o
+      this.dialog = new $.fn.ImperaviDialog({
+        title  : 'Insert video',
+        width  : 600,
+        height : 300
+      })
 
+      this.dialog.show()
+      this.dialog.el.addClass('imperavi-plugin-video')
       this.build()
     },
 
     build: function() {
-      this.dialog = new $.fn.ImperaviDialog
-      this.dialog.show()
-      //alert($.fn.ImperaviOptions().language)
+      var textarea = $(document.createElement('textarea'))
+      this.dialog.setContent(textarea)
     }
   }
 })(jQuery);

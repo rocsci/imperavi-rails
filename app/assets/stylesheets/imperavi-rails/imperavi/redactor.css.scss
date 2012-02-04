@@ -116,17 +116,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
         height: auto;
         box-shadow: 0px 3px 4px rgba(123, 123, 123, 0.4);
         border: 0;
-/*
-      &.has-dropdown:hover {
-        a span {
-          background: asset-url("imperavi_rails/imperavi/hover.png", image) repeat-x;
-        }
-      }
 
-      & a:active span {
-        background: asset-url("imperavi_rails/imperavi/hover.png", image) repeat-x;
-      }
-*/
         li {
           display: block;
           height: auto;
@@ -161,6 +151,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
     }
   }
 }
+
+
 
 div#imperavi-overlay {
   position: absolute;
@@ -220,8 +212,16 @@ div#imperavi-dialog {
   }
 
   article#imperavi-dialog-content {
-    padding: 0 40px 30px 40px;
+    padding: 0 20px 20px 20px;
     background: none;
+  }
+}
+
+//////////////////////////////////////////////////////////////
+.imperavi-plugin-video {
+  textarea {
+    width: 553px;
+    height: 164px;
   }
 }
 

@@ -42,7 +42,7 @@
         .appendTo(this.el);
 
       // Dialog content
-      this.article = $(document.createElement('div'))
+      this.article = $(document.createElement('article'))
         .attr('id', 'imperavi-dialog-content')
         .appendTo(this.el);
 
@@ -82,8 +82,9 @@
       this.article.html(content)
     },
 
+    // TODO Load content via ajax
     loadContent: function(url) {
-      
+      this.setContent('')
     },
 
     cleanUp: function() {
@@ -106,7 +107,8 @@
     },
 
     close: function(e) {
-      if (e.keyCode == 27 || e.type) this.hide()
+      if (e.keyCode == 27 || e.type == 'click')
+        this.hide()
     }
   }
 })(jQuery);
