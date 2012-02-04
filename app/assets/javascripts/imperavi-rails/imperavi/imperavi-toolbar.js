@@ -1,5 +1,11 @@
 (function( $ ) {
-  $.fn.ImperaviToolbar = function(iframe, o) { this.initialize(iframe, o) }
+  $.fn.ImperaviToolbar = function(iframe, o) {
+    var o = $.extend({
+      onButtonClick : function(button) {},
+    }, o)
+
+    this.initialize(iframe, o)
+  }
   
   $.fn.ImperaviToolbar.prototype = {
     iframe : null,
@@ -10,7 +16,7 @@
       this.o      = o
       this.x      = $.fn.ImperaviToolbarDefault
       this.l      = $.fn.ImperaviLanguages.ru
-      
+
       this.build()
     },
 
@@ -39,6 +45,9 @@
 
         a.attr('title', title)
         a.html(caption)
+
+        // This executes a custom callback on button click
+        a.click($.proxy(function(){ this.o.onButtonClick.call(this, a) }, this))
 
       return li.append(a)
     },
