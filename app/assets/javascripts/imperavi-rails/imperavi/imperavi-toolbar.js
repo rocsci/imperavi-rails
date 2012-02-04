@@ -8,67 +8,62 @@
     initialize: function(iframe, o) {
       this.iframe = iframe
       this.o      = o
-
+      this.x      = $.fn.ImperaviToolbarDefault
+      this.l      = $.fn.ImperaviLanguages.ru
+      
       this.build()
     },
 
-    // Build Iframe object
+    // Build Toolbar object
     build: function() {
       this.el = $(document.createElement('ul'))
         .insertBefore(this.iframe.el);
 
-      this.el.append(this.addButton('html', 'Show HTML source'))
-
-      // Dropdowns
-      this.el.append(this.addDropdown('styles', 'Styles'))
-      this.el.append(this.addDropdown('format', 'Format text'))
-      this.el.append(this.addDropdown('lists', 'Insert lists'))
-
-      this.el.append(this.addButton('image', 'Insert image'))
-
-      // Dropdown for table
-      this.el.append(this.addDropdown('table', 'Insert table'))
-
-      this.el.append(this.addButton('video', 'Insert video'))
-      this.el.append(this.addButton('file', 'Insert link to file'))
-
-      // Dropdown for link
-      this.el.append(this.addDropdown('link', 'Insert link'))
+      $.each(this.x, $.proxy(function(key, value) {
+        // Buttons with dropdown
+        if (typeof value == 'object') {
+          this.el.append(this.addDropdown(key, value))
+        } else if (typeof value == 'boolean' && value == true) {
+          var title = typeof this.l[key] == 'object' ? this.l[key].name : this.l[key]
+          this.el.append(this.addButton(key, title, null))
+        }
+      }, this));
     },
 
-    // TODO: DRY addButton and addDropdownItem
-    addButton: function(name, title) {
+    addButton: function(name, title, caption) {
       var li = $(document.createElement('li')).addClass('button-' + name)
       var a  = $(document.createElement('a'))
-        .attr('title', title)
         .attr('href', 'javascript:;')
-        .appendTo(li)
+        .attr('rel', name)
+        .appendTo(li);
+
+        a.attr('title', title)
+        a.html(caption)
 
       return li.append(a)
     },
 
-    addDropdownItem: function(name, title) {
-      var li = $(document.createElement('li')).addClass('button-' + name)
-      var a  = $(document.createElement('a'))
-        .attr('href', 'javascript:;')
-        .html(title)
-        .appendTo(li)
-
-      return li.append(a)
-    },
-
-    addDropdown: function(name, title) {
-      var button = this.addButton(name, title)
+    addDropdown: function(name, items) {
+      var button = this.addButton(name, this.l[name].name, null)
       var ul     = $(document.createElement('ul'))
-      var items  = [
-        { 'name' : 'item', 'title' : 'Item 1' },
-        { 'name' : 'item', 'title' : 'Item 2' },
-        { 'name' : 'item', 'title' : 'Item 3' },
-        { 'name' : 'item', 'title' : 'Item 4' }
-      ]
 
-      $.each(items, $.proxy(function(i, item) {
-        ul.append( this.addDropdownItem(item.name, item.title) )
+      // Add dropdown items
+      $.each(items, $.proxy(function(key, value) {
+        if (typeof value == 'object') {
+          var separator = true
+
+          $.each(value, $.proxy(function(key2, value2) {
+            if (value2 == true) {
+              var item = this.addButton(key2, null, this.l[name][key][key2])
+              if (separator) item.addClass('separator')
+
+              ul.append(item)
+              separator = false
+            }
+          }, this));
+        } else if (typeof value == 'boolean' && value == true) {
+          ul.append( this.addButton(key, null, this.l[name][key]) )
+        }
       }, this));
 
       return button.append(ul)
