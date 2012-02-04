@@ -1,15 +1,25 @@
 (function( $ ) {
-  $.fn.imperavi = function(options) {
+  $.fn.imperavi = function(o) {
     // Editor options
     var o = $.extend({
       language  : 'ru', // TODO replace with $.fn.ImperaviLanguage
       resizer   : $.fn.ImperaviIframeResizer,
-      //dialog    : $.fn.ImperaviDialog,
-      //overlay   : $.fn.ImperaviOverlay,
+      dialog    : $.fn.ImperaviDialog,
+      overlay   : $.fn.ImperaviOverlay,
       iframe    : $.fn.ImperaviIframe,
       toolbar   : $.fn.ImperaviToolbar,
-      delegator : $.fn.ImperaviActionDelegator
-    }, options)
+      delegator : $.fn.ImperaviActionDelegator,
+      options : {
+        dialog : {
+          title  : 'Fuck yeah!',
+          width  : 500,
+          height : 300
+        }
+      }
+    }, o)
+
+    // Global options
+    $.fn.ImperaviOptions = function() { return o }
 
     // Main object
     $.fn.Imperavi = function(el) { this.initialize(el) }
@@ -18,7 +28,6 @@
       textarea  : null,
       iframe    : null,
       toolbar   : null,
-      //overlay   : null,
       resizer   : null,
       delegator : null,
 
@@ -32,14 +41,6 @@
       build: function() {
          // Delegate action to another object
          this.delegator = new o.delegator
-
-         // Create overlay
-         //this.overlay = new o.overlay(o)
-         //this.overlay.show()
-
-         // Create dialog
-         //this.dialog = new o.dialog(o)
-         //this.dialog.show()
 
          // Create iframe
          this.iframe  = new o.iframe(this.textarea, o)

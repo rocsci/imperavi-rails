@@ -9,13 +9,16 @@
 
   $.fn.ImperaviDialog.prototype = {
     el      : null,
+    o       : null,
     overlay : null,
 
     initialize: function(o) {
-      this.o = o
+      // Retrieve user options passed to imperavi
+      this.o = $.extend($.fn.ImperaviOptions().options.dialog, o)
     },
 
     build: function() {
+      // Build dialog just once
       if (this.el) return;
 
       // Create overlay
@@ -44,10 +47,10 @@
         .appendTo(this.el);
 
       // Set default size
-      this.setSize(400, 250)
+      this.setSize(this.o.width, this.o.height)
       
       // Set default title
-      this.setTitle('Hell world!')
+      this.setTitle(this.o.title)
     },
 
     addEvents: function() {
@@ -64,10 +67,10 @@
 
     setSize: function(width, height) {
       this.el.css({
-        width      : width + 'px',
-        height     : height ? height + 'px' : 'auto',
-        marginTop  : '-' + height/2 + 'px',
-        marginLeft : '-' + width/2 + 'px'
+        width      : width+ 'px',
+        height     : height + 'px',
+        marginTop  : '-' + height / 2 + 'px',
+        marginLeft : '-' + width / 2 + 'px'
       }).fadeIn('fast');    
     },
 

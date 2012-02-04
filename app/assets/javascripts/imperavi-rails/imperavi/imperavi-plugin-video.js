@@ -11,7 +11,7 @@
     build: function() {
       this.dialog = new $.fn.ImperaviDialog
       this.dialog.show()
-      //alert('video plugin')
+      //alert($.fn.ImperaviOptions().language)
     }
   }
 })(jQuery);
