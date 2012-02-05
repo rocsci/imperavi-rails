@@ -46,11 +46,27 @@
         .attr('id', 'imperavi-dialog-content')
         .appendTo(this.el);
 
+      // Buttons panel
+      this.buttons = $(document.createElement('div'))
+        .attr('id', 'imperavi-dialog-buttons')
+        .appendTo(this.el);
+
+      this.okay_button   = this.addButton('Okay', 'okay')
+      this.cancel_button = this.addButton('Cancel', 'cancel')
+
       // Set default size
       this.setSize(this.o.width, this.o.height)
       
       // Set default title
       this.setTitle(this.o.title)
+    },
+
+    addButton: function(caption, name) {
+      return $(document.createElement('a'))
+        .attr('id', 'imperavi-dialog-' + name)
+        .attr('href', 'javascript:;')
+        .html(caption)
+        .appendTo(this.buttons);
     },
 
     addEvents: function() {

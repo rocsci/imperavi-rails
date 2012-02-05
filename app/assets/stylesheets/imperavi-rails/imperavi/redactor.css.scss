@@ -1,3 +1,9 @@
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/gradient";
+@import "compass/css3/inline-block";
+@import "./buttons";
+
 div.imperavi {
   border: 1px solid #ddd;
   font: 12px Arial;
@@ -212,8 +218,13 @@ div#imperavi-dialog {
   }
 
   article#imperavi-dialog-content {
-    padding: 0 20px 20px 20px;
+    padding: 0 20px;
     background: none;
+  }
+
+  div#imperavi-dialog-buttons {
+    padding: 10px 20px 0 20px;
+    a { @include b3d-gray; text-decoration: none; margin-right: 7px; }
   }
 }
 

@@ -8,6 +8,7 @@ gemspec
 # Gems used by the dummy application
 gem "jquery-rails"
 gem 'sass-rails', " ~> 3.1.0"
+gem "compass", "0.12.alpha.3"
 gem 'dragonfly', '0.9.10'
 gem 'dragonfly-minimagick'
 gem 'rack-cache', '1.1'

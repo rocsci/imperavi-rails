@@ -1,0 +1,53 @@
+/* gray-3d
+ * see http://dimox.name/examples/beautiful-3d-buttons-using-css3/
+*******************************************************************************/
+@mixin b3d-gray {
+  padding: 7px 20px 9px 20px;
+  font: bold 13px "Trebuchet MS", Tahoma, Arial, sans-serif;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  color: #555;
+  border: 1px solid #BBB;
+  border-top: 1px solid #D0D0D0;
+  border-bottom: 1px solid #A5A5A5;
+  text-shadow: 1px 1px #FAFAFA;
+  background-color: #E8E8E8;
+  margin: 0 0 6px;
+  @include inline-block;
+  @include border-radius(3px);
+  @include background(linear-gradient(top, #eeeeee 0%, #e2e2e2 100%));
+  @include box-shadow(inset 0 1px #F5F5F5,
+    inset 1px 0 #EDEDED,
+    inset -1px 0 #EDEDED,
+    inset 0 -1px #E7E7E7,
+    0 2px #B2B1B1,
+    0 1px #A5A5A5,
+    0 1px 2px rgba(0,0,0,0.4));
+
+  &::-moz-focus-inner { border: 0; }
+
+  &:hover {
+    border-top: 1px solid #C2C2C2;
+    background-color: #E8E8E8;
+    @include background(linear-gradient(top, #e4e4e4 0%, #e9e9e9 100%));
+    @include box-shadow(
+      inset 0 1px #EFEFEF,
+      inset 1px 0 #EDEDED,
+      inset -1px 0 #EDEDED,
+      inset 0 -1px #EDEDED,
+      0 2px #B2B1B1,
+      0 1px #A5A5A5,
+      0 1px 2px rgba(0,0,0,0.4)
+    );
+  }
+
+  &:active {
+    top: 2px;
+    border: 1px solid #B9B9B9;
+    border-top: 1px solid #959595;
+    border-bottom: 1px solid #CACACA;
+    background: #E3E3E3;
+    @include box-shadow(inset 0 1px 2px #B9B9B9);
+  }
+}
