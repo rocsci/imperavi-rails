@@ -19,6 +19,9 @@
         case 'hyperlink':
           new $.fn.ImperaviPluginHyperlink
         break;
+        default:
+          return button
+        break;
       }
     }
   }

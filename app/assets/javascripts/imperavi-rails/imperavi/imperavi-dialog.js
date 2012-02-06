@@ -76,7 +76,7 @@
     },
 
     addButton: function(caption, name) {
-      var callbackName = 'on' + name.charAt(0).toUpperCase() + name.slice(1);
+      var callbackName = 'on' + name.charAt(0).toUpperCase() + name.slice(1)
 
       return $(document.createElement('a'))
         .attr('id', 'imperavi-dialog-' + name)
