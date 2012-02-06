@@ -64,10 +64,10 @@
         .appendTo(this.el);
 
       this.okay_button = this.addButton('Okay', 'okay')
-        .click($.proxy(function(){ this.o.onOkay.call(this) }, this))
+        //.click($.proxy(function(){ this.o.onOkay.call(this) }, this))
 
       this.cancel_button = this.addButton('Cancel', 'cancel')
-        .click($.proxy(function(){ this.o.onCancel.call(this) }, this))
+        //.click($.proxy(function(){ this.o.onCancel.call(this) }, this))
 
       // Set default size
       this.setSize(this.o.width, this.o.height)
@@ -79,10 +79,13 @@
     },
 
     addButton: function(caption, name) {
+      var callbackName = 'on' + name.charAt(0).toUpperCase() + name.slice(1);
+
       return $(document.createElement('a'))
         .attr('id', 'imperavi-dialog-' + name)
         .attr('href', 'javascript:;')
         .html(caption)
+        .click($.proxy(function(){ this.o[callbackName].call(this) }, this))
         .appendTo(this.buttons);
     },
 
