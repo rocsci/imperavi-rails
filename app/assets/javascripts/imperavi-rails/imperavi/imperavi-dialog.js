@@ -41,27 +41,35 @@
         .attr('id', 'imperavi-dialog')
         .appendTo($('body'));
 
+      this.container = $(document.createElement('div'))
+        .attr('id', 'imperavi-dialog-container')
+        .appendTo(this.el);
+
       // Close button
       this.closeBtn = $(document.createElement('a'))
         .attr('href', 'javascript:;')
         .html('&times;')
         .attr('id', 'imperavi-dialog-close')
-        .appendTo(this.el);
+        .appendTo(this.container);
       
       // Dialog title
       this.title = $(document.createElement('h1'))
         .attr('id', 'imperavi-dialog-title')
-        .appendTo(this.el);
+        .appendTo(this.container);
 
       // Dialog content
       this.article = $(document.createElement('article'))
         .attr('id', 'imperavi-dialog-content')
-        .appendTo(this.el);
+        .appendTo(this.container);
 
       // Buttons panel
+      this.buttons_wrapper = $(document.createElement('div'))
+        .attr('id', 'imperavi-dialog-buttons-wrapper')
+        .appendTo(this.container);
+
       this.buttons = $(document.createElement('div'))
         .attr('id', 'imperavi-dialog-buttons')
-        .appendTo(this.el);
+        .appendTo(this.buttons_wrapper);
 
       this.okay_button   = this.addButton('Okay', 'okay')
       this.cancel_button = this.addButton('Cancel', 'cancel')
@@ -104,11 +112,16 @@
 
     setSize: function(width, height) {
       this.el.css({
-        width      : width+ 'px',
+        width      : width + 'px',
         height     : height + 'px',
         marginTop  : '-' + height / 2 + 'px',
         marginLeft : '-' + width / 2 + 'px'
-      }).fadeIn('fast');    
+      }).fadeIn('fast');
+
+      this.container.css({
+        width      : width + 'px',
+        height     : height + 'px',
+      })
     },
 
     setTitle: function(title) {

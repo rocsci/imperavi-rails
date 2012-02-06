@@ -192,41 +192,72 @@ div#imperavi-dialog {
   color: #000;
   display: none;
 
-  h1#imperavi-dialog-title {
-    padding: 20px 60px 20px 20px;
-    margin: 0;
-    font-size: 20px;
-    cursor: default;
-  }
+  div#imperavi-dialog-container {
+    position: relative;
 
-  a#imperavi-dialog-close {
-    position: absolute;
-    display: block;
-    padding: 20px;
-    right: 0;
-    top: 0;
-    font-size: 25px;
-    cursor: pointer;
-    outline: none;
-    font-family: Arial;
-    text-decoration: none;
-    color: #000;
-
-    &:hover, &:focus {
-      color: maroon;
+    h1#imperavi-dialog-title {
+      padding: 20px 60px 20px 20px;
+      margin: 0;
+      font-size: 20px;
+      cursor: default;
     }
-  }
 
-  article#imperavi-dialog-content {
-    padding: 0 20px;
-    background: none;
-  }
+    a#imperavi-dialog-close {
+      position: absolute;
+      display: block;
+      padding: 20px;
+      right: 0;
+      top: 0;
+      font-size: 25px;
+      cursor: pointer;
+      outline: none;
+      font-family: Arial;
+      text-decoration: none;
+      color: #000;
 
-  div#imperavi-dialog-buttons {
-    padding: 10px 20px 0 20px;
-    a { @include b3d-gray; text-decoration: none; margin-right: 7px; }
+      &:hover, &:focus {
+        color: maroon;
+      }
+    }
 
-    a#imperavi-dialog-okay { padding-left: 40px; padding-right: 40px; }
+    article#imperavi-dialog-content {
+      padding: 0 20px;
+      background: none;
+
+      div {
+        padding: 0;
+        margin: 0 0 5px 0;
+        background: none;
+
+        label {
+          display: block;
+          font-size: 11px;
+        }
+      }
+    }
+
+    div#imperavi-dialog-buttons-wrapper {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+              
+      div#imperavi-dialog-buttons {
+        overflow: hidden;
+        padding: 10px 20px 13px 20px;
+
+        a {
+          @include b3d-gray;
+          text-decoration: none;
+          margin-right: 7px;
+          float: left;
+        }
+
+        a#imperavi-dialog-okay {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+    }
   }
 }
 
@@ -235,6 +266,18 @@ div#imperavi-dialog {
   textarea {
     width: 553px;
     height: 164px;
+  }
+}
+
+.imperavi-plugin-hyperlink {
+  input {
+    width: 410px - 6px;
+  }
+
+  // "Remove" button
+  div#imperavi-dialog-buttons #imperavi-dialog-remove {
+    float: right !important;
+    margin-right: 0 !important;
   }
 }
 

@@ -2,6 +2,7 @@
 //= require ./imperavi/toolbars/default
 
 //= require ./imperavi/imperavi-action-delegator
+//= require ./imperavi/imperavi-i18n
 
 //= require ./imperavi/imperavi-plugin-video
 //= require ./imperavi/imperavi-plugin-image

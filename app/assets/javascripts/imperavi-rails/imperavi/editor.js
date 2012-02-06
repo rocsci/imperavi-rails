@@ -2,7 +2,7 @@
   $.fn.imperavi = function(o) {
     // Editor options
     var o = $.extend({
-      language  : 'ru', // TODO replace with $.fn.ImperaviLanguage
+      locale    : 'ru', // TODO replace with $.fn.ImperaviLanguage
       resizer   : $.fn.ImperaviIframeResizer,
       dialog    : $.fn.ImperaviDialog,
       overlay   : $.fn.ImperaviOverlay,

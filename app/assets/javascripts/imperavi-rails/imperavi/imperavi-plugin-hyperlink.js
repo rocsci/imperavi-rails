@@ -7,8 +7,8 @@
       
       this.dialog = new $.fn.ImperaviDialog({
         title    : 'Insert hyperlink',
-        width    : 400,
-        height   : 200,
+        width    : 450,
+        height   : 237,
         onRemove : function() {
           alert('fuck yeah!')
           this.hide()
@@ -26,8 +26,29 @@
     },
 
     build: function() {
-      //var textarea = $(document.createElement('textarea'))
-      //this.dialog.setContent(textarea)
+      var wrapper = $(document.createElement('div'))
+      var url     = this.build_input('Url', 'url').appendTo(wrapper)
+      var caption = this.build_input('Title', 'title').appendTo(wrapper)
+
+      this.dialog.setContent(wrapper)
+    },
+
+    build_input: function(title, name) {
+      var wrapper = $(document.createElement('div'))
+        .addClass('field')
+
+      var label = $(document.createElement('label'))
+        .attr('for', name)
+        .html(title)
+        .appendTo(wrapper)
+
+      var url = $(document.createElement('input'))
+        .attr('type', 'text')
+        .attr('name', name)
+        .attr('id', name)
+        .appendTo(wrapper)
+
+      return wrapper
     }
   }
 })(jQuery);
