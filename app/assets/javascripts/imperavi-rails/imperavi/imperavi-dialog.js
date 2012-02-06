@@ -63,11 +63,8 @@
         .attr('id', 'imperavi-dialog-buttons')
         .appendTo(this.el);
 
-      this.okay_button = this.addButton('Okay', 'okay')
-        //.click($.proxy(function(){ this.o.onOkay.call(this) }, this))
-
+      this.okay_button   = this.addButton('Okay', 'okay')
       this.cancel_button = this.addButton('Cancel', 'cancel')
-        //.click($.proxy(function(){ this.o.onCancel.call(this) }, this))
 
       // Set default size
       this.setSize(this.o.width, this.o.height)
@@ -98,9 +95,11 @@
     },
 
     removeEvents: function() {
-      $(document).unbind('keyup', $.proxy(this.close, this))
-      this.closeBtn.unbind('click', $.proxy(this.close, this))
-      this.overlay.el.unbind('click', $.proxy(this.close, this))
+      var onCloseCallback = $.proxy(function(e){ this.o.onClose.call(this, e) }, this)
+
+      $(document).unbind('keyup', onCloseCallback)
+      this.closeBtn.unbind('click', onCloseCallback)
+      this.overlay.el.unbind('click', onCloseCallback)
     },
 
     setSize: function(width, height) {
