@@ -4,7 +4,7 @@
   $.fn.ImperaviActionDelegator.prototype = {
     initialize: function() {},
 
-    delegateButtonClick: function(button, iframe, overlay) {
+    delegateButtonClick: function(button, iframe) {
       switch (button.attr('rel')) {
         case 'indent':
         case 'outdent':
@@ -12,6 +12,12 @@
         break;
         case 'video':
           new $.fn.ImperaviPluginVideo
+        break;
+        case 'image':
+          new $.fn.ImperaviPluginImage
+        break;
+        case 'hyperlink':
+          new $.fn.ImperaviPluginHyperlink
         break;
       }
     }

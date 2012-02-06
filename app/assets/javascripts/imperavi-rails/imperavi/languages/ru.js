@@ -97,10 +97,6 @@ $.fn.ImperaviLanguages = {
     },
 
     // Insert or remove hyperlink
-    link : {
-      name   : 'Ссылка',
-      insert : 'Вставить ссылку ...',
-      remove : 'Удалить ссылку'
-    }
+    hyperlink : 'Ссылка'
   }
 }

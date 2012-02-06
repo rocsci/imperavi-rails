@@ -11,7 +11,7 @@
       delegator : $.fn.ImperaviActionDelegator,
       options : {
         dialog : {
-          title  : 'Fuck yeah!',
+          title  : 'Default title',
           width  : 500,
           height : 300
         }
@@ -51,7 +51,7 @@
          // Create toolbar
          this.toolbar = new o.toolbar(this.iframe, {
            onButtonClick : $.proxy(function(button) {
-              this.delegator.delegateButtonClick(button, this.iframe, this.overlay)
+              this.delegator.delegateButtonClick(button, this.iframe)
            }, this)
          })
       },

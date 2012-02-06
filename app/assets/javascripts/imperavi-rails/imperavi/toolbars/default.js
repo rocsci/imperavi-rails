@@ -39,16 +39,16 @@ $.fn.ImperaviToolbarDefault = {
   table : {
     insert : true,
     remove : true,
-    header: {
+    header : {
       add    : true,
       remove : true
     },
-    row: {
+    row : {
       above  : true,
       below  : true,
       remove : true
     },
-    column: {
+    column : {
       left   : true,
       right  : true,
       remove : true
@@ -59,11 +59,8 @@ $.fn.ImperaviToolbarDefault = {
   video : true,
 
   // Insert or remove hyperlink to a file
-  file: true,
+  file : true,
 
   // Insert or remove hyperlink
-  link  : {
-    insert : true,
-    remove : true
-  }
+  hyperlink : true
 }

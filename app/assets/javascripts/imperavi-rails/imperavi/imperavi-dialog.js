@@ -3,9 +3,21 @@
 // - onClose
 // - onBuilt
 // - onContentLoaded
+// - onOkay
+// - onCancel
 
 (function( $ ) {
-  $.fn.ImperaviDialog = function(o) { this.initialize(o) }
+  $.fn.ImperaviDialog = function(o) {
+    var o = $.extend({
+      onOkay   : function()  { this.hide() },
+      onCancel : function()  { this.hide() },
+      onClose  : function(e) { this.close(e) },
+      onBuilt  : function()  {},
+      onLoad   : function()  {}
+    }, o)
+
+    this.initialize(o)
+  }
 
   $.fn.ImperaviDialog.prototype = {
     el      : null,
@@ -51,14 +63,19 @@
         .attr('id', 'imperavi-dialog-buttons')
         .appendTo(this.el);
 
-      this.okay_button   = this.addButton('Okay', 'okay')
+      this.okay_button = this.addButton('Okay', 'okay')
+        .click($.proxy(function(){ this.o.onOkay.call(this) }, this))
+
       this.cancel_button = this.addButton('Cancel', 'cancel')
+        .click($.proxy(function(){ this.o.onCancel.call(this) }, this))
 
       // Set default size
       this.setSize(this.o.width, this.o.height)
       
       // Set default title
       this.setTitle(this.o.title)
+
+      this.o.onBuilt.call(this)
     },
 
     addButton: function(caption, name) {
@@ -70,9 +87,11 @@
     },
 
     addEvents: function() {
-      $(document).keyup($.proxy(this.close, this))
-      this.closeBtn.click($.proxy(this.close, this))
-      this.overlay.el.click($.proxy(this.close, this))
+      var onCloseCallback = $.proxy(function(e){ this.o.onClose.call(this, e) }, this)
+
+      $(document).keyup(function(e) { onCloseCallback(e) })
+      this.closeBtn.click(function(e) { onCloseCallback(e) })
+      this.overlay.el.click(function(e) { onCloseCallback(e) })
     },
 
     removeEvents: function() {
@@ -101,6 +120,7 @@
     // TODO Load content via ajax
     loadContent: function(url) {
       this.setContent('')
+      this.o.onLoad.call(this)
     },
 
     cleanUp: function() {

@@ -84,7 +84,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
       &.button-lists a        { background-position: -96px; }
       &.button-image a        { background-position: -128px; }
       &.button-table a        { background-position: -160px; }
-      &.button-link a         { background-position: -192px; }
+      &.button-hyperlink a    { background-position: -192px; }
       &.button-video a        { background-position: -224px; }
       &.button-fullscreen a   { background-position: -256px; }
       &.button-undo a         { background-position: -288px; }
@@ -225,6 +225,8 @@ div#imperavi-dialog {
   div#imperavi-dialog-buttons {
     padding: 10px 20px 0 20px;
     a { @include b3d-gray; text-decoration: none; margin-right: 7px; }
+
+    a#imperavi-dialog-okay { padding-left: 40px; padding-right: 40px; }
   }
 }
 
