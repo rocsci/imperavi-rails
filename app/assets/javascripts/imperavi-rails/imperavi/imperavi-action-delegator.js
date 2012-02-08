@@ -19,6 +19,9 @@
         case 'hyperlink':
           new $.fn.ImperaviPluginHyperlink
         break;
+        case 'file':
+          new $.fn.ImperaviPluginFile
+        break;
         default:
           return button
         break;

@@ -7,6 +7,7 @@
 //= require ./imperavi/imperavi-plugin-video
 //= require ./imperavi/imperavi-plugin-image
 //= require ./imperavi/imperavi-plugin-hyperlink
+//= require ./imperavi/imperavi-plugin-file
 
 //= require ./imperavi/imperavi-dialog
 //= require ./imperavi/imperavi-overlay

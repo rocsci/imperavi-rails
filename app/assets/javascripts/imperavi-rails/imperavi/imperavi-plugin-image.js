@@ -21,8 +21,39 @@
     },
 
     build: function() {
-      //var textarea = $(document.createElement('textarea'))
-      //this.dialog.setContent(textarea)
+      this.tabs_area = this.build_tabs_area()
+
+      this.pick_tab = this.build_tab('Pick image', '')
+        .appendTo(this.tabs_area)
+        .addClass('current')
+
+      this.upload_tab = this.build_tab('Upload image', '')
+        .appendTo(this.tabs_area)
+
+      this.link_tab = this.build_tab('Link to image', '')
+        .appendTo(this.tabs_area)
+      
+      this.dialog.setContent(this.tabs_area)
+    },
+
+    build_tabs_area: function() {
+      var article = $(document.createElement('article'))
+        .addClass('imperavi-tabs')
+
+      return article
+    },
+
+    build_tab: function(title, content) {
+      var section = $(document.createElement('section'))
+      var heading = $(document.createElement('h3'))
+        .html(title)
+        .appendTo(section)
+
+      var content = $(document.createElement('div'))
+        .appendTo(section)
+        .html(content)
+
+      return section
     }
   }
 })(jQuery);
