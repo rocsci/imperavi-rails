@@ -29,27 +29,29 @@
       this.removeButton.hide();
 
       // Create tabs and content for tabs
-      this.tabsArea = this.build_tabs_area()
+      this.tabsArea = this.buildTabsArea()
 
-      this.pickTab = this.build_tab('Pick image', this.buildPickTabContent())
+      this.pickTab = this.buildTab('Pick image', this.buildPickTabContent())
         .appendTo(this.tabsArea)
         .addClass('current')
 
-      this.uploadTab = this.build_tab('Upload image', this.buildUploadTabContent())
+      this.uploadTab = this.buildTab('Upload image', this.buildUploadTabContent())
         .appendTo(this.tabsArea)
 
       this.dialog.setContent(this.tabsArea)
       this.switchTabs();
     },
 
-    build_tabs_area: function() {
+    // Build tabs container
+    buildTabsArea: function() {
       var article = $(document.createElement('article'))
         .addClass('imperavi-tabs')
 
       return article
     },
 
-    build_tab: function(title, content) {
+    // Add another one tab
+    buildTab: function(title, content) {
       var section = $(document.createElement('section'))
       var heading = $(document.createElement('h3'))
         .html(title)
@@ -63,6 +65,7 @@
       return section
     },
 
+    // Switch between tabs
     switchTabs: function() {
       var currentTab = this.pickTab
       
@@ -91,18 +94,25 @@
         .addClass('thumbnail')
         .appendTo(wrapper)
 
+      var caption = $(document.createElement('span'))
+        .html('No image yet')
+        .appendTo(thumbnail)
+
       // Choose image from disk
-      var imageLocal = this.build_input('Choose image from disk', 'image', 'file')
+      var imageLocal = this.buildInput('Choose image from disk', 'image', 'file')
         .appendTo(wrapper)
 
       // Image url
-      var imageUrl = this.build_input('or specify link to image', 'image-url', 'text')
+      var imageUrl = this.buildInput('or specify link to image', 'image-url', 'text')
         .appendTo(wrapper)
+
+      // Image position
+      var imagePos = this.buildPositionSelect().appendTo(wrapper)
 
       return wrapper
     },
 
-    build_input: function(title, name, type) {
+    buildInput: function(title, name, type) {
       var wrapper = $(document.createElement('div'))
         .addClass('field')
 
@@ -116,6 +126,37 @@
         .attr('name', name)
         .attr('id', name)
         .appendTo(wrapper)
+
+      return wrapper
+    },
+
+    buildPositionSelect: function() {
+      var wrapper = $(document.createElement('div'))
+        .addClass('field')
+
+      var label = $(document.createElement('label'))
+        .attr('for', 'image-position')
+        .html('Image position')
+        .appendTo(wrapper)
+
+      var select = $(document.createElement('select'))
+        .attr('id', 'image-position')
+        .attr('name', 'image-position')
+        .appendTo(wrapper)
+
+      // Create select options
+      var options = {
+        none  : 'None',
+        left  : 'To left',
+        right : 'To right'
+      }
+
+      $.each(options, function(value, caption) {
+        $(document.createElement('option'))
+          .attr('value', value)
+          .html(caption)
+          .appendTo(select)
+      })
 
       return wrapper
     }

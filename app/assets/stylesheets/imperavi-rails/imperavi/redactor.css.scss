@@ -325,6 +325,12 @@ div#imperavi-dialog {
       position: absolute;
       top: 0;
       left: 0;
+
+      span {
+        display: block;
+        line-height: 340px;
+        text-align: center;
+      }
     }
 
     #image-url { width: 400px; }
