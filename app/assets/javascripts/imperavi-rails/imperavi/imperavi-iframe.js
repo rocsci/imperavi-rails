@@ -64,7 +64,11 @@
     },
 
     doc: function() {
-      return this.el.get(0).contentDocument || this.el.get(0).contentWindow.document
+      var i = this.el.get(0)
+      if (i.contentDocument) return i.contentDocument
+      if (i.contentWindow)   return i.contentWindow.document
+
+      return i.document
     }
   }
 })(jQuery);
