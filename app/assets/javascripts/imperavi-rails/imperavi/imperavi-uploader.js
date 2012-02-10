@@ -14,7 +14,28 @@
       this.cleanup()
       this.populate(content)
 
-      phonyForm.submit();
+      var form = this.form.addClass("loading");
+
+      $.ajax(form.prop("action"), {
+        files    : form.find(":file"),
+        iframe   : true,
+        dataType : "json"
+      }).always(function() {
+        form.removeClass("loading");
+      }).done(function(data) {
+        /*
+        $.each(data.files, function(idx, file) {
+          $("<li><b></b> (<span class='size'></span>, <span class='mime'></span>)</li>")
+            .find("b").text(file.filename).end()
+            .find(".size").text(formatSize(file.length)).end()
+            .find(".mime").text(file.mime).end()
+            .appendTo("#filelist");
+        });
+        */
+
+        //form.find(":file").val("");
+        alert(data)
+      });
     }
 
     // Build form

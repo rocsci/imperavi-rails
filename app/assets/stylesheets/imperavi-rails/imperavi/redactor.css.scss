@@ -331,6 +331,14 @@ div#imperavi-dialog {
         line-height: 340px;
         text-align: center;
       }
+
+      &.loading {
+        background-image: asset-url("imperavi_rails/imperavi/spinner.gif", image);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+
+        span { display: none; }
+      }
     }
 
     #image-url { width: 400px; }

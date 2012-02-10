@@ -9,4 +9,5 @@ ImperaviRails::Engine.routes.draw do
   get '/toolbar'    => 'imperavi#toolbar',    :as => :toolbar
   get '/language'   => 'imperavi#language',   :as => :language
   get '/typograf'   => 'imperavi#typograf',   :as => :typograf
+  match '/upload'     => 'imperavi#upload',     :as => :upload
 end

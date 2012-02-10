@@ -31,13 +31,13 @@
       // Create tabs and content for tabs
       this.tabsArea = this.buildTabsArea()
 
-      this.pickTab = this.buildTab('Pick image', this.buildPickTabContent())
+      this.uploadTab = this.buildTab('Upload image', this.buildUploadTabContent())
         .appendTo(this.tabsArea)
         .addClass('current')
 
-      this.uploadTab = this.buildTab('Upload image', this.buildUploadTabContent())
+      this.pickTab = this.buildTab('Pick image', this.buildPickTabContent())
         .appendTo(this.tabsArea)
-
+        
       this.dialog.setContent(this.tabsArea)
       this.switchTabs();
     },
@@ -67,7 +67,7 @@
 
     // Switch between tabs
     switchTabs: function() {
-      var currentTab = this.pickTab
+      var currentTab = this.uploadTab
       
       this.tabsArea.on('click', '.imperavi-tab', function(e){
         e.preventDefault();
@@ -98,9 +98,16 @@
         .html('No image yet')
         .appendTo(thumbnail)
 
+      // Create form
+      var form = $(document.createElement('form'))
+        .attr('enctype', 'application/x-www-form-urlencoded')
+        .attr('method', 'post')
+        .attr('action', '/imperavi/upload')
+        .appendTo(wrapper)
+
       // Choose image from disk
       var imageLocal = this.buildInput('Choose image from disk', 'image', 'file')
-        .appendTo(wrapper)
+      .appendTo(form)
 
       // Image url
       var imageUrl = this.buildInput('or specify link to image', 'image-url', 'text')
@@ -108,6 +115,27 @@
 
       // Image position
       var imagePos = this.buildPositionSelect().appendTo(wrapper)
+
+      // Submit form
+      form.on("change", ":file", function() {
+        thumbnail.addClass("loading");
+
+        $.ajax(form.prop("action"), {
+          files    : form.find(":file"),
+          iframe   : true,
+          dataType : "json"
+        }).always(function() {
+          thumbnail.removeClass("loading");
+        }).done(function(data) {
+          thumbnail.empty()
+
+          $(document.createElement('img'))
+            .attr('src', data.file)
+            .attr('width',  300)
+            .attr('height', 340)
+            .appendTo(thumbnail)
+        });
+      });
 
       return wrapper
     },
@@ -152,10 +180,12 @@
       }
 
       $.each(options, function(value, caption) {
-        $(document.createElement('option'))
+        var option = $(document.createElement('option'))
           .attr('value', value)
           .html(caption)
           .appendTo(select)
+
+        if (value == 'left') option.attr('selected', true)
       })
 
       return wrapper

@@ -1,3 +1,7 @@
+// Vendor
+// require ./imperavi/jquery.iframe-transport.js
+
+// Imperavi
 //= require ./imperavi/languages/ru
 //= require ./imperavi/toolbars/default
 

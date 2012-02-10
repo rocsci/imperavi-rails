@@ -3,6 +3,10 @@ module ImperaviRails
     respond_to :html, :json
     layout :false
 
+    def upload
+      render :json => { :file => '/uploaded.jpg' }
+    end
+
     def file
       
     end
