@@ -1,5 +1,8 @@
 // Vendor
-// require ./imperavi/jquery.iframe-transport.js
+//= require ./imperavi/jquery.ui.widget.js
+//= require ./imperavi/jquery.iframe-transport.js
+//= require ./imperavi/jquery.fileupload.js
+//= require ./imperavi/textselect.js
 
 // Imperavi
 //= require ./imperavi/languages/ru

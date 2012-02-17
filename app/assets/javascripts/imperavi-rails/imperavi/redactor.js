@@ -1140,7 +1140,7 @@ function detectAndroidWebKit() {
 				
 				if (this.opts.overlay) {
 					$('#redactor_imp_modal_overlay')
-					  .hide();		
+					  .hide()
 					  .unbind('click', function() { this.modalClose(); }.bind2(this));					
 				}
 

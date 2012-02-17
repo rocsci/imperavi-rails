@@ -4,7 +4,7 @@
   $.fn.ImperaviPluginImage.prototype = {
     initialize: function(o) {
       this.o = o
-      
+
       this.dialog = new $.fn.ImperaviDialog({
         title  : 'Insert image',
         width  : 800,
@@ -14,6 +14,8 @@
           this.hide()
         },
         onOkay : function() {
+          //this.doc.selection.createRange().pasteHTML(param);
+          image.appendTo($('body'))
           this.hide()
         }
       })
@@ -100,42 +102,70 @@
 
       // Create form
       var form = $(document.createElement('form'))
-        .attr('enctype', 'application/x-www-form-urlencoded')
+        .attr('enctype', 'multipart/form-data')
         .attr('method', 'post')
-        .attr('action', '/imperavi/upload')
+        .attr('action', '/images')
+        //.attr('accept-charset', 'UTF-8')
         .appendTo(wrapper)
 
-      // Choose image from disk
-      var imageLocal = this.buildInput('Choose image from disk', 'image', 'file')
+      // Choose image from disk field
+      var imageLocal = this.buildInput('Choose image from disk', 'image[image]', 'file')
       .appendTo(form)
 
-      // Image url
-      var imageUrl = this.buildInput('or specify link to image', 'image-url', 'text')
+      // Image url field
+      var imageUrl = this.buildInput('or specify link to image', 'image[url]', 'text')
         .appendTo(wrapper)
 
-      // Image position
-      var imagePos = this.buildPositionSelect().appendTo(wrapper)
+      // Image align dropdown
+      var imagePos = this.buildAlignSelect().appendTo(wrapper)
 
-      // Submit form
-      form.on("change", ":file", function() {
-        thumbnail.addClass("loading");
-
-        $.ajax(form.prop("action"), {
-          files    : form.find(":file"),
-          iframe   : true,
-          dataType : "json"
-        }).always(function() {
-          thumbnail.removeClass("loading");
-        }).done(function(data) {
+      imageLocal.fileupload({
+        dataType : 'json',
+        url      : '/images',
+        change   : function() {
+          thumbnail.addClass('loading')
+        },
+        done     : $.proxy(function(e, data) {
           thumbnail.empty()
+          thumbnail.removeClass('loading')
 
-          $(document.createElement('img'))
-            .attr('src', data.file)
+          this.image = $(document.createElement('img'))
+            .attr('src', data.result.thumbnail_url)
             .attr('width',  300)
             .attr('height', 340)
             .appendTo(thumbnail)
-        });
+        }, this)
       });
+
+      // Submit form
+      /*form.on("change", ":file", function() {
+        thumbnail.addClass("loading");
+
+        $.ajax(form.attr("action"), {
+          files    : form.find(":file"),
+          iframe   : true,
+          dataType : "json",
+          contentType : 'multipart/form-data',
+          type     : form.attr('method')
+        }).always(function() {
+          thumbnail.removeClass("loading");
+        }).done(function(data) {
+
+          if (data.errors) {
+            // Some errors occurs
+            alert(data.errors) // TODO
+          } else {
+            // No errors
+            thumbnail.empty()
+
+            $(document.createElement('img'))
+              .attr('src', data.file)
+              .attr('width',  300)
+              .attr('height', 340)
+              .appendTo(thumbnail)            
+          }
+        });
+      });*/
 
       return wrapper
     },
@@ -158,18 +188,18 @@
       return wrapper
     },
 
-    buildPositionSelect: function() {
+    buildAlignSelect: function() {
       var wrapper = $(document.createElement('div'))
         .addClass('field')
 
       var label = $(document.createElement('label'))
-        .attr('for', 'image-position')
+        .attr('for', 'image-align')
         .html('Image position')
         .appendTo(wrapper)
 
       var select = $(document.createElement('select'))
-        .attr('id', 'image-position')
-        .attr('name', 'image-position')
+        .attr('id', 'image-align')
+        .attr('name', 'image[align]')
         .appendTo(wrapper)
 
       // Create select options

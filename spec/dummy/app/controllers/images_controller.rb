@@ -13,9 +13,16 @@ class ImagesController < ApplicationController
     @image = Image.new(params[:image])
 
     if @image.save
-      render :text => view_context.image_tag(resize_image(@image, 300, 250).url, :alt => '')
+      render :json => {
+        :name          => 'suxx',
+        :size          => @image.image.size,
+        :url           => @image.image.url,
+        :thumbnail_url => @image.image.thumb('300x250#').url,
+        :delete_url    => 'delete-url-here',#image_path(@image),
+        :delete_type   => 'DELETE'
+      }
     else
-      render :json => @image.errors
+      render :json => { :errors => @image.errors }
     end
   end
 

@@ -1,221 +1,165 @@
-// This [jQuery](http://jquery.com/) plugin implements an `<iframe>`
-// [transport](http://api.jquery.com/extending-ajax/#Transports) so that
-// `$.ajax()` calls support the uploading of files using standard HTML file
-// input fields. This is done by switching the exchange from `XMLHttpRequest`
-// to a hidden `iframe` element containing a form that is submitted.
+/*
+ * jQuery Iframe Transport Plugin 1.3
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2011, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
 
-// The [source for the plugin](http://github.com/cmlenz/jquery-iframe-transport)
-// is available on [Github](http://github.com/) and dual licensed under the MIT
-// or GPL Version 2 licenses.
+/*jslint unparam: true, nomen: true */
+/*global define, window, document */
 
-// ## Usage
-
-// To use this plugin, you simply add an `iframe` option with the value `true`
-// to the Ajax settings an `$.ajax()` call, and specify the file fields to
-// include in the submssion using the `files` option, which can be a selector,
-// jQuery object, or a list of DOM elements containing one or more
-// `<input type="file">` elements:
-
-//     $("#myform").submit(function() {
-//         $.ajax(this.action, {
-//             files: $(":file", this),
-//             iframe: true
-//         }).complete(function(data) {
-//             console.log(data);
-//         });
-//     });
-
-// The plugin will construct a hidden `<iframe>` element containing a copy of
-// the form the file field belongs to, will disable any form fields not
-// explicitly included, submit that form, and process the response.
-
-// If you want to include other form fields in the form submission, include
-// them in the `data` option, and set the `processData` option to `false`:
-
-//     $("#myform").submit(function() {
-//         $.ajax(this.action, {
-//             data: $(":text", this).serializeArray(),
-//             files: $(":file", this),
-//             iframe: true,
-//             processData: false
-//         }).complete(function(data) {
-//             console.log(data);
-//         });
-//     });
-
-// ### Response Data Types
-
-// As the transport does not have access to the HTTP headers of the server
-// response, it is not as simple to make use of the automatic content type
-// detection provided by jQuery as with regular XHR. If you can't set the
-// expected response data type (for example because it may vary), you will
-// need to employ a workaround on the server side: Send back an HTML document
-// containing just a `<textarea>` element with a `data-type` attribute that
-// specifies the MIME type, and put the actual payload in the textarea:
-
-//     <textarea data-type="application/json">
-//       {"ok": true, "message": "Thanks so much"}
-//     </textarea>
-
-// The iframe transport plugin will detect this and pass the value of the
-// `data-type` attribute on to jQuery as if it was the "Content-Type" response
-// header, thereby enabling the same kind of conversions that jQuery applies
-// to regular responses. For the example above you should get a Javascript
-// object as the `data` parameter of the `complete` callback, with the
-// properties `ok: true` and `message: "Thanks so much"`.
-
-// ### Handling Server Errors
-
-// Another problem with using an `iframe` for file uploads is that it is
-// impossible for the javascript code to determine the HTTP status code of the
-// servers response. Effectively, all of the calls you make will look like they
-// are getting successful responses, and thus invoke the `done()` or
-// `complete()` callbacks. You can only determine communicate problems using
-// the content of the response payload. For example, consider using a JSON
-// response such as the following to indicate a problem with an uploaded file:
-
-//     <textarea data-type="application/json">
-//       {"ok": false, "message": "Please only upload reasonably sized files."}
-//     </textarea>
-
-// ### Compatibility
-
-// This plugin has primarily been tested on Safari 5 (or later), Firefox 4 (or
-// later), and Internet Explorer (all the way back to version 6). While I
-// haven't found any issues with it so far, I'm fairly sure it still doesn't
-// work around all the quirks in all different browsers. But the code is still
-// pretty simple overall, so you should be able to fix it and contribute a
-// patch :)
-
-// ## Annotated Source
-
-(function($, undefined) {
-  "use strict";
-
-  // Register a prefilter that checks whether the `iframe` option is set, and
-  // switches to the "iframe" data type if it is `true`.
-  $.ajaxPrefilter(function(options, origOptions, jqXHR) {
-    if (options.iframe) {
-      return "iframe";
+(function (factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        // Register as an anonymous AMD module:
+        define(['jquery'], factory);
+    } else {
+        // Browser globals:
+        factory(window.jQuery);
     }
-  });
+}(function ($) {
+    'use strict';
 
-  // Register a transport for the "iframe" data type. It will only activate
-  // when the "files" option has been set to a non-empty list of enabled file
-  // inputs.
-  $.ajaxTransport("iframe", function(options, origOptions, jqXHR) {
-    var form = null,
-        iframe = null,
-        name = "iframe-" + $.now(),
-        files = $(options.files).filter(":file:enabled"),
-        markers = null;
+    // Helper variable to create unique names for the transport iframes:
+    var counter = 0;
 
-    // This function gets called after a successful submission or an abortion
-    // and should revert all changes made to the page to enable the
-    // submission via this transport.
-    function cleanUp() {
-      markers.replaceWith(function(idx) {
-        return files.get(idx);
-      });
-      form.remove();
-      iframe.attr("src", "javascript:false;").remove();
-    }
-
-    // Remove "iframe" from the data types list so that further processing is
-    // based on the content type returned by the server, without attempting an
-    // (unsupported) conversion from "iframe" to the actual type.
-    options.dataTypes.shift();
-
-    if (files.length) {
-      form = $("<form enctype='multipart/form-data' method='post'></form>").
-        hide().attr({action: options.url, target: name});
-
-      // If there is any additional data specified via the `data` option,
-      // we add it as hidden fields to the form. This (currently) requires
-      // the `processData` option to be set to false so that the data doesn't
-      // get serialized to a string.
-      if (typeof(options.data) === "string" && options.data.length > 0) {
-        $.error("data must not be serialized");
-      }
-      $.each(options.data || {}, function(name, value) {
-        if ($.isPlainObject(value)) {
-          name = value.name;
-          value = value.value;
+    // The iframe transport accepts three additional options:
+    // options.fileInput: a jQuery collection of file input fields
+    // options.paramName: the parameter name for the file form data,
+    //  overrides the name property of the file input field(s)
+    // options.formData: an array of objects with name and value properties,
+    //  equivalent to the return data of .serializeArray(), e.g.:
+    //  [{name: 'a', value: 1}, {name: 'b', value: 2}]
+    $.ajaxTransport('iframe', function (options) {
+        if (options.async && (options.type === 'POST' || options.type === 'GET')) {
+            var form,
+                iframe;
+            return {
+                send: function (_, completeCallback) {
+                    form = $('<form style="display:none;"></form>');
+                    // javascript:false as initial iframe src
+                    // prevents warning popups on HTTPS in IE6.
+                    // IE versions below IE8 cannot set the name property of
+                    // elements that have already been added to the DOM,
+                    // so we set the name along with the iframe HTML markup:
+                    iframe = $(
+                        '<iframe src="javascript:false;" name="iframe-transport-' +
+                            (counter += 1) + '"></iframe>'
+                    ).bind('load', function () {
+                        var fileInputClones;
+                        iframe
+                            .unbind('load')
+                            .bind('load', function () {
+                                var response;
+                                // Wrap in a try/catch block to catch exceptions thrown
+                                // when trying to access cross-domain iframe contents:
+                                try {
+                                    response = iframe.contents();
+                                    // Google Chrome and Firefox do not throw an
+                                    // exception when calling iframe.contents() on
+                                    // cross-domain requests, so we unify the response:
+                                    if (!response.length || !response[0].firstChild) {
+                                        throw new Error();
+                                    }
+                                } catch (e) {
+                                    response = undefined;
+                                }
+                                // The complete callback returns the
+                                // iframe content document as response object:
+                                completeCallback(
+                                    200,
+                                    'success',
+                                    {'iframe': response}
+                                );
+                                // Fix for IE endless progress bar activity bug
+                                // (happens on form submits to iframe targets):
+                                $('<iframe src="javascript:false;"></iframe>')
+                                    .appendTo(form);
+                                form.remove();
+                            });
+                        form
+                            .prop('target', iframe.prop('name'))
+                            .prop('action', options.url)
+                            .prop('method', options.type);
+                        if (options.formData) {
+                            $.each(options.formData, function (index, field) {
+                                $('<input type="hidden"/>')
+                                    .prop('name', field.name)
+                                    .val(field.value)
+                                    .appendTo(form);
+                            });
+                        }
+                        if (options.fileInput && options.fileInput.length &&
+                                options.type === 'POST') {
+                            fileInputClones = options.fileInput.clone();
+                            // Insert a clone for each file input field:
+                            options.fileInput.after(function (index) {
+                                return fileInputClones[index];
+                            });
+                            if (options.paramName) {
+                                options.fileInput.each(function () {
+                                    $(this).prop('name', options.paramName);
+                                });
+                            }
+                            // Appending the file input fields to the hidden form
+                            // removes them from their original location:
+                            form
+                                .append(options.fileInput)
+                                .prop('enctype', 'multipart/form-data')
+                                // enctype must be set as encoding for IE:
+                                .prop('encoding', 'multipart/form-data');
+                        }
+                        form.submit();
+                        // Insert the file input fields at their original location
+                        // by replacing the clones with the originals:
+                        if (fileInputClones && fileInputClones.length) {
+                            options.fileInput.each(function (index, input) {
+                                var clone = $(fileInputClones[index]);
+                                $(input).prop('name', clone.prop('name'));
+                                clone.replaceWith(input);
+                            });
+                        }
+                    });
+                    form.append(iframe).appendTo(document.body);
+                },
+                abort: function () {
+                    if (iframe) {
+                        // javascript:false as iframe src aborts the request
+                        // and prevents warning popups on HTTPS in IE6.
+                        // concat is used to avoid the "Script URL" JSLint error:
+                        iframe
+                            .unbind('load')
+                            .prop('src', 'javascript'.concat(':false;'));
+                    }
+                    if (form) {
+                        form.remove();
+                    }
+                }
+            };
         }
-        $("<input type='hidden'>").attr({name:  name, value: value}).
-          appendTo(form);
-      });
+    });
 
-      // Add a hidden `X-Requested-With` field with the value `IFrame` to the
-      // field, to help server-side code to determine that the upload happened
-      // through this transport.
-      $("<input type='hidden' value='IFrame' name='X-Requested-With'>").
-        appendTo(form);
-
-      // Move the file fields into the hidden form, but first remember their
-      // original locations in the document by replacing them with disabled
-      // clones. This should also avoid introducing unwanted changes to the
-      // page layout during submission.
-      markers = files.after(function(idx) {
-        return $(this).clone().prop("disabled", true);
-      }).next();
-      files.appendTo(form);
-
-      return {
-
-        // The `send` function is called by jQuery when the request should be
-        // sent.
-        send: function(headers, completeCallback) {
-          iframe = $("<iframe src='javascript:false;' name='" + name +
-            "' style='display:none'></iframe>");
-
-          // The first load event gets fired after the iframe has been injected
-          // into the DOM, and is used to prepare the actual submission.
-          iframe.bind("load", function() {
-
-            // The second load event gets fired when the response to the form
-            // submission is received. The implementation detects whether the
-            // actual payload is embedded in a `<textarea>` element, and
-            // prepares the required conversions to be made in that case.
-            iframe.unbind("load").bind("load", function() {
-              var doc = this.contentWindow ? this.contentWindow.document :
-                (this.contentDocument ? this.contentDocument : this.document),
-                root = doc.documentElement ? doc.documentElement : doc.body,
-                textarea = root.getElementsByTagName("textarea")[0],
-                type = textarea ? textarea.getAttribute("data-type") : null,
-                content = {
-                  html: root.innerHTML,
-                  text: type ?
-                    textarea.value :
-                    root ? (root.textContent || root.innerText) : null
-                };
-              cleanUp();
-              completeCallback(200, "OK", content, type ?
-                ("Content-Type: " + type) :
-                null);
-            });
-
-            // Now that the load handler has been set up, submit the form.
-            form[0].submit();
-          });
-
-          // After everything has been set up correctly, the form and iframe
-          // get injected into the DOM so that the submission can be
-          // initiated.
-          $("body").append(form, iframe);
-        },
-
-        // The `abort` function is called by jQuery when the request should be
-        // aborted.
-        abort: function() {
-          if (iframe !== null) {
-            iframe.unbind("load").attr("src", "javascript:false;");
-            cleanUp();
-          }
+    // The iframe transport returns the iframe content document as response.
+    // The following adds converters from iframe to text, json, html, and script:
+    $.ajaxSetup({
+        converters: {
+            'iframe text': function (iframe) {
+                return $(iframe[0].body).text();
+            },
+            'iframe json': function (iframe) {
+                return $.parseJSON($(iframe[0].body).text());
+            },
+            'iframe html': function (iframe) {
+                return $(iframe[0].body).html();
+            },
+            'iframe script': function (iframe) {
+                return $.globalEval($(iframe[0].body).text());
+            }
         }
+    });
 
-      };
-    }
-  });
-
-})(jQuery);
+}));
