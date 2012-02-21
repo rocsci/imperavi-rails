@@ -70,8 +70,8 @@ function detectAndroidWebKit() {
 			overlay             : true,  // modal overlay
 			fileUploadCallback  : false, // callback function
 			imageUploadCallback : false, // callback function
-			imageInsertCallback : function() {},
-		});
+			imageInsertCallback : function() {}
+		};
 
 		var defaultPaths = {
 			// Paths to various handlers
@@ -114,7 +114,8 @@ function detectAndroidWebKit() {
 					remove   : '/imperavi/files/777'  // /tests/file_delete.php?delete=
 				}
 			}
-		}
+		};
+
 		$.extend(defaultOptions, defaultPaths);
 		this.opts = $.extend(defaultOptions,options);
 		
@@ -1142,11 +1143,10 @@ function detectAndroidWebKit() {
 		modalClose: function() {
 			$('#redactor_imp_modal_close').unbind('click', function() { this.modalClose(); }.bind2(this));
 			$('#redactor_imp_modal').fadeOut('fast', function() {
-				$('#redactor_imp_modal_inner').html('');			
-				
+				$('#redactor_imp_modal_inner').html('');
 				if (this.opts.overlay) {
 					$('#redactor_imp_modal_overlay')
-					  .hide();		
+					  .hide()
 					  .unbind('click', function() { this.modalClose(); }.bind2(this));					
 				}
 

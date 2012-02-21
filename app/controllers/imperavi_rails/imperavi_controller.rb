@@ -32,11 +32,11 @@ module ImperaviRails
     end
 
     def toolbar
-      render 'toolbars/#{params[:type]}'
+      render "imperavi_rails/toolbars/#{params[:type]}"
     end
 
     def language
-      render 'languages/#{params[:lang]}'
+      render "imperavi_rails/languages/#{params[:lang]}"
     end
 
     def typograf

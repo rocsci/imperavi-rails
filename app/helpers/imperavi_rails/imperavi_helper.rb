@@ -60,10 +60,10 @@ module ImperaviRails
           :stylesheets => [imperavi_stylesheet_path('wym')],
 
           # Toolbar
-          :toolbar => imperavi_rails.toolbar_path(:format => :js),
+          :toolbar => imperavi_rails.toolbar_path(base_options[:toolbar], :format => :js),
 
           # Interface translations
-          :language =>  imperavi_rails.language_path(:format => :js),
+          :language =>  imperavi_rails.language_path(base_options[:lang], :format => :js),
 
           # Typograf
           :typograf => imperavi_rails.typograf_path,
