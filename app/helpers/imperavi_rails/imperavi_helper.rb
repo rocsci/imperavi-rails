@@ -33,13 +33,15 @@ module ImperaviRails
     end
 
     def imperavi_default_options
-      {
+      base_options = {
         :air                 => false,
         :autosave            => false,
         :interval            => 20,   
         :resize              => true,
         :visual              => true,
         :focus               => false,
+        :lang                => 'en',
+        :toolbar             => 'main',
         :autoclear           => true,
         :removeClasses       => false,
         :removeStyles        => true,
@@ -49,7 +51,9 @@ module ImperaviRails
         :overlay             => true, 
         :fileUploadCallback  => false,
         :imageUploadCallback => false,
-      
+      }
+
+      base_paths = {
         # Paths to various handlers
         :paths => {
           # Editor css
@@ -91,6 +95,8 @@ module ImperaviRails
           }
         }
       }
+
+      base_options.merge!(base_paths)
     end
   end
 end
