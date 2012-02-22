@@ -19,6 +19,8 @@ module ImperaviRails
     end
 
     def imperavi(element, options = {}, wrap = true)
+      p "-----------------------------------"
+      p element, options
       result = %Q(
         $(document).ready(function() {
           $('##{element}').redactor(#{imperavi_options(options).to_json});
@@ -29,11 +31,12 @@ module ImperaviRails
     end
 
     def imperavi_options(options)
-      imperavi_default_options.deep_merge!(options)
+      merged_opt = imperavi_default_options.deep_merge!(options)
+      imperavi_default_paths(merged_opt).deep_merge!(options)
     end
 
     def imperavi_default_options
-      base_options = {
+      {
         :air                 => false,
         :autosave            => false,
         :interval            => 20,   
@@ -52,8 +55,10 @@ module ImperaviRails
         :fileUploadCallback  => false,
         :imageUploadCallback => false,
       }
+    end
 
-      base_paths = {
+    def imperavi_default_paths(base_options)
+      {
         # Paths to various handlers
         :paths => {
           # Editor css
@@ -95,8 +100,6 @@ module ImperaviRails
           }
         }
       }
-
-      base_options.merge!(base_paths)
     end
   end
 end
