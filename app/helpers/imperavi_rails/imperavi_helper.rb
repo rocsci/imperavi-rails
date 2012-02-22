@@ -19,11 +19,9 @@ module ImperaviRails
     end
 
     def imperavi(element, options = {}, wrap = true)
-      p "-----------------------------------"
-      p element, options
       result = %Q(
         $(document).ready(function() {
-          $('##{element}').redactor(#{imperavi_options(options).to_json});
+          document.#{element}_redactor = $('##{element}').redactor(#{imperavi_options(options).to_json});
         });
       )
 
