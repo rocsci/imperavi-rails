@@ -160,7 +160,7 @@ function detectAndroidWebKit() {
 	
 	            $(this.resizer).mousedown(function(e) { this.initResize(e) }.bind2(this));
 			}
-			
+	
 			// enable	
 	   		this.enable(this.$el.val());
 
@@ -192,7 +192,7 @@ function detectAndroidWebKit() {
 					        
 				this.syncCode();
 		    }.bind2(this));
-			
+
 			// autosave	
 			if (this.opts.autosave)	{
 				setInterval(function() {
@@ -200,11 +200,11 @@ function detectAndroidWebKit() {
 					$.post(this.opts.autosave, { data: html });
 				}.bind2(this), this.opts.interval*1000);
 			}
-			
+
 			this.formSets();	
 
 			// focus
-			if (this.opts.focus) this.focus();   		 
+			if (this.opts.focus) this.focus();
 		},
 		
 		/* 	
@@ -321,9 +321,9 @@ function detectAndroidWebKit() {
 		getRedactorDoc: function(html) {		
 			css = '';
 
-			for (stylesheet in this.opts.paths.stylesheets) {
-				css += '<link media="all" href="' + this.opts.paths.stylesheets[stylesheet] + '" rel="stylesheet">';
-			}
+			$.each(this.opts.paths.stylesheets, $.proxy(function(i, stylesheet) {
+				css += '<link media="all" href="' + stylesheet + '" rel="stylesheet">';
+			}, this));
 
 	    	var frameHtml = '<!DOCTYPE html>\n';
 			frameHtml += '<html><head>' + css + '</head><body>';
@@ -1140,13 +1140,13 @@ function detectAndroidWebKit() {
 				
 				if (this.opts.overlay) {
 					$('#redactor_imp_modal_overlay')
-					  .hide();		
+					  .hide()		
 					  .unbind('click', function() { this.modalClose(); }.bind2(this));					
 				}
 
 				var escClose = function(e) { if ( e.keyCode == 27) this.modalClose(); }.bind2(this)
 				$(document).unbind('keyup', escClose);
-				$(this.doc).unbind('keyup', fescClose);
+				$(this.doc).unbind('keyup', escClose);
 			}.bind2(this));
 		},
 
