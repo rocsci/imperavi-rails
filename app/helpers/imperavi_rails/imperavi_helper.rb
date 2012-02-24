@@ -2,20 +2,12 @@ module ImperaviRails
   module ImperaviHelper
     include ActionView::Helpers::AssetTagHelper
 
-    def imperavi_stylesheet_path(source)
-      stylesheet_path("imperavi-rails/imperavi/#{source}")
-    end
-
-    def imperavi_javascript_path(source)
-      javascript_path("imperavi-rails/#{source}")
-    end
-
     def include_imperavi_stylesheet
-      stylesheet_link_tag imperavi_stylesheet_path('redactor')
+      stylesheet_link_tag "imperavi-rails/imperavi/redactor"
     end
 
     def include_imperavi_javascript
-      javascript_include_tag imperavi_javascript_path('imperavi')
+      javascript_include_tag "imperavi-rails/imperavi"
     end
 
     def imperavi(element, options = {}, wrap = true)
