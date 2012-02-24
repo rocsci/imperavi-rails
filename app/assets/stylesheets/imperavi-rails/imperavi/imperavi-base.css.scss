@@ -108,7 +108,7 @@
   .redactor_video_box {
     width: 300px;
     height: 200px;
-    background: asset-url("imperavi_rails/video_box.png", images) center no-repeat #000 !important; 
+    background: asset-url("imperavi-rails/video_box.png", images) center no-repeat #000 !important; 
     margin: 10px;
 
     object, embed, iframe {
@@ -118,22 +118,22 @@
 
   .redactor_file_link { padding-left: 20px; }
 
-  .redactor_file_ico_avi    { background: asset-url("imperavi_rails/imperavi/fileicons/avi.png", images) no-repeat; }
-  .redactor_file_ico_csv    { background: asset-url("imperavi_rails/imperavi/fileicons/csv.png", images) no-repeat; }
-  .redactor_file_ico_doc    { background: asset-url("imperavi_rails/imperavi/fileicons/doc.png", images) no-repeat; }
-  .redactor_file_ico_gif    { background: asset-url("imperavi_rails/imperavi/fileicons/gif.png", images) no-repeat; }
-  .redactor_file_ico_html   { background: asset-url("imperavi_rails/imperavi/fileicons/html.png", images) no-repeat; }
-  .redactor_file_ico_jpg    { background: asset-url("imperavi_rails/imperavi/fileicons/jpg.png", images) no-repeat; }
-  .redactor_file_ico_mov    { background: asset-url("imperavi_rails/imperavi/fileicons/mov.png", images) no-repeat; }
-  .redactor_file_ico_other  { background: asset-url("imperavi_rails/imperavi/fileicons/other.png", images) no-repeat; }
-  .redactor_file_ico_pdf    { background: asset-url("imperavi_rails/imperavi/fileicons/pdf.png", images) no-repeat; }
-  .redactor_file_ico_png    { background: asset-url("imperavi_rails/imperavi/fileicons/png.png", images) no-repeat; }
-  .redactor_file_ico_ppt    { background: asset-url("imperavi_rails/imperavi/fileicons/ppt.png", images) no-repeat; }
-  .redactor_file_ico_rar    { background: asset-url("imperavi_rails/imperavi/fileicons/rar.png", images) no-repeat; }
-  .redactor_file_ico_rtf    { background: asset-url("imperavi_rails/imperavi/fileicons/rtf.png", images) no-repeat; }
-  .redactor_file_ico_txt    { background: asset-url("imperavi_rails/imperavi/fileicons/txt.png", images) no-repeat; }
-  .redactor_file_ico_xls    { background: asset-url("imperavi_rails/imperavi/fileicons/xls.png", images) no-repeat; }
-  .redactor_file_ico_zip    { background: asset-url("imperavi_rails/imperavi/fileicons/zip.png", images) no-repeat; }
+  .redactor_file_ico_avi    { background: asset-url("imperavi-rails/imperavi/fileicons/avi.png", images) no-repeat; }
+  .redactor_file_ico_csv    { background: asset-url("imperavi-rails/imperavi/fileicons/csv.png", images) no-repeat; }
+  .redactor_file_ico_doc    { background: asset-url("imperavi-rails/imperavi/fileicons/doc.png", images) no-repeat; }
+  .redactor_file_ico_gif    { background: asset-url("imperavi-rails/imperavi/fileicons/gif.png", images) no-repeat; }
+  .redactor_file_ico_html   { background: asset-url("imperavi-rails/imperavi/fileicons/html.png", images) no-repeat; }
+  .redactor_file_ico_jpg    { background: asset-url("imperavi-rails/imperavi/fileicons/jpg.png", images) no-repeat; }
+  .redactor_file_ico_mov    { background: asset-url("imperavi-rails/imperavi/fileicons/mov.png", images) no-repeat; }
+  .redactor_file_ico_other  { background: asset-url("imperavi-rails/imperavi/fileicons/other.png", images) no-repeat; }
+  .redactor_file_ico_pdf    { background: asset-url("imperavi-rails/imperavi/fileicons/pdf.png", images) no-repeat; }
+  .redactor_file_ico_png    { background: asset-url("imperavi-rails/imperavi/fileicons/png.png", images) no-repeat; }
+  .redactor_file_ico_ppt    { background: asset-url("imperavi-rails/imperavi/fileicons/ppt.png", images) no-repeat; }
+  .redactor_file_ico_rar    { background: asset-url("imperavi-rails/imperavi/fileicons/rar.png", images) no-repeat; }
+  .redactor_file_ico_rtf    { background: asset-url("imperavi-rails/imperavi/fileicons/rtf.png", images) no-repeat; }
+  .redactor_file_ico_txt    { background: asset-url("imperavi-rails/imperavi/fileicons/txt.png", images) no-repeat; }
+  .redactor_file_ico_xls    { background: asset-url("imperavi-rails/imperavi/fileicons/xls.png", images) no-repeat; }
+  .redactor_file_ico_zip    { background: asset-url("imperavi-rails/imperavi/fileicons/zip.png", images) no-repeat; }
 
   h1, h2, h3, h4, h5 {
     font-weight: normal;
