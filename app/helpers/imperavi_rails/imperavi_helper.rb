@@ -45,7 +45,9 @@ module ImperaviRails
         # Paths to various handlers
         :paths => {
           # Editor css
-          :stylesheets => [imperavi_stylesheet_path('wym')],
+          # TODO stylesheet_path does not work here.
+          # this is temoarary fix I hope
+          :stylesheets => [stylesheet_link_tag('wym').match(/href="([^"]+)"/)[1]], # Ugly but works
 
           # Toolbar
           :toolbar => imperavi_rails.toolbar_path(:format => :js),
