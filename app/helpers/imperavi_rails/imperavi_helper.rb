@@ -13,7 +13,7 @@ module ImperaviRails
     def imperavi(element, options = {}, wrap = true)
       result = %Q(
         $(document).ready(function() {
-          $('##{element}').redactor(#{imperavi_options(options).to_json});
+          document.#{element}_redactor = $('##{element}').redactor(#{imperavi_options(options).to_json});
         });
       )
 
@@ -21,7 +21,8 @@ module ImperaviRails
     end
 
     def imperavi_options(options)
-      imperavi_default_options.deep_merge!(options)
+      merged_opt = imperavi_default_options.deep_merge!(options)
+      imperavi_default_paths(merged_opt).deep_merge!(options)
     end
 
     def imperavi_default_options
@@ -32,6 +33,8 @@ module ImperaviRails
         :resize              => true,
         :visual              => true,
         :focus               => false,
+        :lang                => 'en',
+        :toolbar             => 'main',
         :autoclear           => true,
         :removeClasses       => false,
         :removeStyles        => true,
@@ -41,7 +44,11 @@ module ImperaviRails
         :overlay             => true, 
         :fileUploadCallback  => false,
         :imageUploadCallback => false,
-      
+      }
+    end
+
+    def imperavi_default_paths(base_options)
+      {
         # Paths to various handlers
         :paths => {
           # Editor css
@@ -51,10 +58,10 @@ module ImperaviRails
           :stylesheets => [],
 
           # Toolbar
-          :toolbar => imperavi_rails.toolbar_path(:format => :js),
+          :toolbar => imperavi_rails.toolbar_path(base_options[:toolbar], :format => :js),
 
           # Interface translations
-          :language =>  imperavi_rails.language_path(:format => :js),
+          :language =>  imperavi_rails.language_path(base_options[:lang], :format => :js),
 
           # Typograf
           :typograf => imperavi_rails.typograf_path,

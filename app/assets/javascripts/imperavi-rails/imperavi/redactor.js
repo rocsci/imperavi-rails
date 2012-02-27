@@ -52,7 +52,7 @@ function detectAndroidWebKit() {
 	
 	// Options and variables	
 	function Construct(el, options) {
-		this.opts = $.extend({	
+		var defaultOptions = {	
 			air                 : false,
 			autosave            : false, // false or url
 			interval            : 20,    // seconds
@@ -60,6 +60,8 @@ function detectAndroidWebKit() {
 			visual              : true,
 			focus               : false,
 			autoclear           : true,
+			lang                : 'en',
+        	toolbar             : 'main',
 			removeClasses       : false,
 			removeStyles        : true,
 			convertLinks        : true,
@@ -68,18 +70,20 @@ function detectAndroidWebKit() {
 			overlay             : true,  // modal overlay
 			fileUploadCallback  : false, // callback function
 			imageUploadCallback : false, // callback function
-			imageInsertCallback : function() {},
-			
+			imageInsertCallback : function() {}
+		};
+
+		var defaultPaths = {
 			// Paths to various handlers
 			paths : {
 				// Editor css
 				stylesheets : ['/assets/imperavi-rails/imperavi/wym.css'],
 
 				// Toolbar
-				toolbar : '/imperavi/toolbar.js',
+				toolbar : '/imperavi/toolbar/'+defaultOptions.toolbar+'.js',
 
 				// Interface translations
-				language : '/imperavi/language.js',
+				language : '/imperavi/language/'+defaultOptions.lang+'.js',
 
 				// Typograf
 				typograf : '/imperavi/typograf',
@@ -110,7 +114,10 @@ function detectAndroidWebKit() {
 					remove   : '/imperavi/files/777'  // /tests/file_delete.php?delete=
 				}
 			}
-		}, options);
+		};
+
+		$.extend(defaultOptions, defaultPaths);
+		this.opts = $.extend(defaultOptions,options);
 		
 		this.$el = $(el);
 	};
@@ -1136,8 +1143,7 @@ function detectAndroidWebKit() {
 		modalClose: function() {
 			$('#redactor_imp_modal_close').unbind('click', function() { this.modalClose(); }.bind2(this));
 			$('#redactor_imp_modal').fadeOut('fast', function() {
-				$('#redactor_imp_modal_inner').html('');			
-				
+				$('#redactor_imp_modal_inner').html('');
 				if (this.opts.overlay) {
 					$('#redactor_imp_modal_overlay')
 					  .hide()		
