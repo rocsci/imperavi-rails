@@ -1,6 +1,6 @@
 module ImperaviRails
   module Generators
-    class InitGenerator < Rails::Generators::Base
+    class InstallGenerator < Rails::Generators::Base
       desc "Creates required entries in routes.rb"
 
       def add_routes

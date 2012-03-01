@@ -12,10 +12,10 @@ Put this line into your Gemfile:
 gem 'imperavi-rails', '0.0.9.beta'
 ```
 
-Then run generator for initializing:
+Then run install generator:
 
 ```bash
-rails generate imperavi_rails:init
+rails generate imperavi_rails:install
 ```
 
 add this line to `config/environments/production.rb`
