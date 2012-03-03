@@ -11,9 +11,12 @@ module ImperaviRails
     end
 
     def imperavi(element, options = {}, wrap = true)
+      javascript_var = options.delete(:javascript_var) || imperavi_default_options[:javascript_var]
       result = %Q(
+        var #{javascript_var};
+
         $(document).ready(function() {
-          document.#{element}_redactor = $('##{element}').redactor(#{imperavi_options(options).to_json});
+          #{javascript_var} = document.#{element}_redactor = $('##{element}').redactor(#{imperavi_options(options).to_json});
         });
       )
 
@@ -29,7 +32,7 @@ module ImperaviRails
       {
         :air                 => false,
         :autosave            => false,
-        :interval            => 20,   
+        :interval            => 20,
         :resize              => true,
         :visual              => true,
         :focus               => false,
@@ -41,9 +44,10 @@ module ImperaviRails
         :convertLinks        => true,
         :autoformat          => true,
         :clearOnInit         => false,
-        :overlay             => true, 
+        :overlay             => true,
         :fileUploadCallback  => false,
         :imageUploadCallback => false,
+        :javascript_var      => 'imperavi_redactor'
       }
     end
 
@@ -96,3 +100,4 @@ module ImperaviRails
     end
   end
 end
+
