@@ -12,10 +12,10 @@ Put this line into your Gemfile:
 gem 'imperavi-rails', '0.0.10.beta'
 ```
 
-Then mount the engine in routes.rb:
+Then run install generator:
 
-```ruby
-mount ImperaviRails::Engine => "/imperavi"
+```bash
+rails generate imperavi_rails:install
 ```
 
 add this line to `config/environments/production.rb`
