@@ -1,6 +1,6 @@
-# Imperavi for Rails 3.1+ (still under development)
+# Imperavi for Rails 3.1 and 3.2
 
-What is Imperavi? Imperavi is open-source, lightweight and really pretty-looking wysiwyg editor written with JQuery. Look at the demo page: http://imperavi.com/redactor/examples/ (sorry for Russian). Like it?
+What is Imperavi? Imperavi is open-source, lightweight and really pretty-looking wysiwyg editor written with JQuery. Look at the demo page: http://imperavi.com/redactor/examples/ . Like it?
 
 I created this mountable engine with Imperavi so now you can easily integrate this editor into your app.
 
@@ -72,11 +72,11 @@ body {
 
 ## Deal with images
 
-Uploading images is not part of the imperavi-rails. You have to implement this functionality in your application yourself. It's easy. Read the docs below.
+Image uploading at the server side is not a part of the imperavi-rails. You have to implement this functionality in your application by yourself. It's easy. Read the docs below.
 
 * [How to upload images with imperavi-rails](https://github.com/tanraya/imperavi-rails/wiki/How-to-upload-images-with-imperavi-rails)
 
-Also you can see Dummy app that has working images uploading: https://github.com/tanraya/imperavi-rails/tree/master/spec/dummy
+Also, look at the Dummy app with images uploading: https://github.com/tanraya/imperavi-rails/tree/master/spec/dummy
 
 # Contribute
 
@@ -89,6 +89,11 @@ I would appreciate any participation in the project. Any additions, fixes and id
 * Ensure that the changes in your branch are as atomic as possible
 * Create a pull request on Github
 
+# Contributors
+
+* [Ildar Kapkaev](https://github.com/kapkaev)
+* [Dmitry Zhlobo](https://github.com/Proghat)
+
 # TODO
 
-* [Read TODO here](https://github.com/tanraya/imperavi-rails/blob/master/TODO.md)
+* Use new 7.5 version of redactor in imparavi-rails
