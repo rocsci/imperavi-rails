@@ -6,22 +6,16 @@ I created this mountable engine with Imperavi so now you can easily integrate th
 
 ## Installation
 
-Put this line into your Gemfile:
+Put this gem into your Gemfile and run `bundle install`
 
 ```ruby
-gem 'imperavi-rails', '0.0.11.beta'
+gem 'imperavi-rails', '0.0.12.beta'
 ```
 
 Then run install generator:
 
 ```bash
 rails generate imperavi_rails:install
-```
-
-add this line to `config/environments/production.rb`
-
-```ruby
-config.assets.precompile += ['imperavi-rails/imperavi/redactor.css', 'imperavi-rails/imperavi.js']
 ```
 
 And you're done!
