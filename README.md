@@ -9,7 +9,7 @@ I created this mountable engine with Imperavi so now you can easily integrate th
 Put this line into your Gemfile:
 
 ```ruby
-gem 'imperavi-rails', '0.0.10.beta'
+gem 'imperavi-rails', '0.0.11.beta'
 ```
 
 Then run install generator:
