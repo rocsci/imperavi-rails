@@ -1,12 +1,10 @@
 ImperaviRails::Engine.routes.draw do
-  get '/file'             => 'imperavi#file',       :as => :file
-  get '/file_edit'        => 'imperavi#file_edit',  :as => :file_edit
-  get '/image'            => 'imperavi#image',      :as => :image
-  get '/image_edit'       => 'imperavi#image_edit', :as => :image_edit
-  get '/link'             => 'imperavi#link',       :as => :link
-  get '/table'            => 'imperavi#table',      :as => :table
-  get '/video'            => 'imperavi#video',      :as => :video
-  get '/toolbar/:type'    => 'imperavi#toolbar',    :as => :toolbar
-  get '/language/:lang'   => 'imperavi#language',   :as => :language
-  get '/typograf'         => 'imperavi#typograf',   :as => :typograf
+  get '/plugins/file'       => 'imperavi#file',       :as => :file
+  get '/plugins/image'      => 'imperavi#image',      :as => :image
+  get '/plugins/image_edit' => 'imperavi#image_edit', :as => :image_edit
+  get '/plugins/link'       => 'imperavi#link',       :as => :link
+  get '/plugins/table'      => 'imperavi#table',      :as => :table
+  get '/plugins/video'      => 'imperavi#video',      :as => :video
+  get '/toolbars/:type'     => 'imperavi#toolbars',   :as => :toolbars
+  get '/languages/:lang'    => 'imperavi#languages',  :as => :languages
 end

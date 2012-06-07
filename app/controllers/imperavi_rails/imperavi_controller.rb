@@ -6,10 +6,6 @@ module ImperaviRails
     def file
       
     end
-
-    def file_edit
-      
-    end
     
     def image
       
@@ -31,16 +27,12 @@ module ImperaviRails
       
     end
 
-    def toolbar
+    def toolbars
       render "imperavi_rails/toolbars/#{params[:type]}"
     end
 
-    def language
+    def languages
       render "imperavi_rails/languages/#{params[:lang]}"
-    end
-
-    def typograf
-
     end
   end
 end
